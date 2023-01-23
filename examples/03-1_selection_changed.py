@@ -1,5 +1,5 @@
-from tabulous import TableViewer
-from tabulous.types import SelectionRanges
+from tabulour import TableViewer
+from tabulour.types import SelectionRanges
 import numpy as np
 
 if __name__ == "__main__":

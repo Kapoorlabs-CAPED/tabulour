@@ -1,4 +1,4 @@
-from tabulous import TableViewerWidget
+from tabulour import TableViewerWidget
 import napari
 import numpy as np
 from magicgui import magicgui

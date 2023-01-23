@@ -12,7 +12,7 @@ with open("README.md") as f:
 setup(
     name=TABULOUR,
     version=VERSION,
-    description="A table data viewer for Python",
+    description="A table data viewer for Python based on tabulous",
     long_description=README,
     long_description_content_type="text/markdown",
     author="Varun Kapoor, Hanjin Liu",

@@ -1,5 +1,5 @@
 from magicgui.widgets import Container
-from tabulous import MagicTableViewer
+from tabulour import MagicTableViewer
 import pandas as pd
 
 if __name__ == "__main__":

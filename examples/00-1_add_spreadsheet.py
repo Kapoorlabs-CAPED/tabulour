@@ -1,4 +1,4 @@
-from tabulous import TableViewer
+from tabulour import TableViewer
 from magicgui import magicgui
 import numpy as np
 

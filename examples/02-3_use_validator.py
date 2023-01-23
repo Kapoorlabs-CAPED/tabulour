@@ -1,4 +1,4 @@
-from tabulous import TableViewer
+from tabulour import TableViewer
 
 # You can define validators for each column.
 # A validator is called when a cell is edited, *after* the value is converted

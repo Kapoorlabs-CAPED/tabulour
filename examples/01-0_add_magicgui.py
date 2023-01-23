@@ -1,5 +1,5 @@
-from tabulous import TableViewer
-from tabulous.types import TableData, TableColumn
+from tabulour import TableViewer
+from tabulour.types import TableData, TableColumn
 from magicgui import magicgui
 import numpy as np
 import pandas as pd

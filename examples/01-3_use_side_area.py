@@ -1,4 +1,4 @@
-from tabulous import TableViewer
+from tabulour import TableViewer
 from magicgui import magicgui
 
 if __name__ == "__main__":

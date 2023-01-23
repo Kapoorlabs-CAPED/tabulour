@@ -1,5 +1,5 @@
-from tabulous import TableViewer
-from tabulous.types import TableInfo
+from tabulour import TableViewer
+from tabulour.types import TableInfo
 from magicgui import magicgui
 import pandas as pd
 import seaborn as sns

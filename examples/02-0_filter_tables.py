@@ -1,5 +1,5 @@
 import pandas as pd
-from tabulous import TableViewer
+from tabulour import TableViewer
 import numpy as np
 
 if __name__ == "__main__":

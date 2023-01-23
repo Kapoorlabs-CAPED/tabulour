@@ -1,4 +1,4 @@
-from tabulous import TableViewer
+from tabulour import TableViewer
 import pandas as pd
 
 # You can check how data types are get edited by tabulous

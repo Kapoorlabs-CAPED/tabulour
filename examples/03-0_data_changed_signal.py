@@ -1,5 +1,5 @@
-from tabulous import TableViewer
-from tabulous.types import ItemInfo
+from tabulour import TableViewer
+from tabulour.types import ItemInfo
 import numpy as np
 
 if __name__ == "__main__":

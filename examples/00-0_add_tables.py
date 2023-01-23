@@ -1,4 +1,4 @@
-from tabulous import TableViewer
+from tabulour import TableViewer
 import numpy as np
 import pandas as pd
 
