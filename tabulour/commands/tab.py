@@ -3,7 +3,7 @@ from typing import TYPE_CHECKING
 from . import _dialogs
 
 if TYPE_CHECKING:
-    from tabulous.widgets import TableViewerBase
+    from tabulour.widgets import TableViewerBase
 
 
 def activate_left(viewer: TableViewerBase):

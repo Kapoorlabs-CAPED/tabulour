@@ -1,7 +1,7 @@
 from __future__ import annotations
 from pathlib import Path
 from typing import TYPE_CHECKING
-from tabulous.widgets import TableViewer
+from tabulour.widgets import TableViewer
 
 if TYPE_CHECKING:
     from .widgets._mainwindow import TableViewerBase

@@ -4,7 +4,7 @@ from typing import TYPE_CHECKING
 from . import _utils
 
 if TYPE_CHECKING:
-    from tabulous.widgets import TableViewerBase
+    from tabulour.widgets import TableViewerBase
 
 
 def set_popup_mode(viewer: TableViewerBase):

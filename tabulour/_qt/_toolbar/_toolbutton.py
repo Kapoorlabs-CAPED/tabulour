@@ -2,7 +2,7 @@ from __future__ import annotations
 from pathlib import Path
 from qtpy import QtWidgets as QtW
 
-from tabulous._qt._svg import QColoredSVGIcon
+from tabulour._qt._svg import QColoredSVGIcon
 
 
 ICON_DIR = Path(__file__).parent.parent / "_icons"

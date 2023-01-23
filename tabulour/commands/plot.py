@@ -5,7 +5,7 @@ from . import _dialogs
 
 
 if TYPE_CHECKING:
-    from tabulous.widgets import TableBase, TableViewerBase
+    from tabulour.widgets import TableBase, TableViewerBase
 
 
 def plot(viewer: TableViewerBase):

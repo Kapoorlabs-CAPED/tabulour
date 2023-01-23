@@ -7,8 +7,8 @@ from typing import TYPE_CHECKING, Sequence
 from qtpy import QtWidgets as QtW, QtCore, QtGui
 from qtpy.QtCore import Qt, Signal
 
-from tabulous._qt._toolbar._toolbutton import QColoredToolButton
-from tabulous._sort_filter_proxy import (
+from tabulour._qt._toolbar._toolbutton import QColoredToolButton
+from tabulour._sort_filter_proxy import (
     FilterType,
     FilterInfo,
     ComposableFilter,
@@ -16,15 +16,15 @@ from tabulous._sort_filter_proxy import (
 )
 from superqt import QEnumComboBox
 
-from tabulous.exceptions import UnreachableError
+from tabulour.exceptions import UnreachableError
 
 if TYPE_CHECKING:
     from typing_extensions import Self
-    from tabulous._qt._table import QBaseTable
+    from tabulour._qt._table import QBaseTable
     import pandas as pd
 
 ICON_DIR = Path(__file__).parent / "_icons"
-logger = logging.getLogger("tabulous")
+logger = logging.getLogger("tabulour")
 
 
 class HeaderAnchorMixin:

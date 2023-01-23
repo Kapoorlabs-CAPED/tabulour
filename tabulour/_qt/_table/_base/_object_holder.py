@@ -14,7 +14,7 @@ class QObjectHolder(QtW.QWidget):
         _layout = QtW.QVBoxLayout()
         self.setLayout(_layout)
 
-        from tabulous._qt import QTableLayer
+        from tabulour._qt import QTableLayer
         import pandas as pd
 
         qtable = QTableLayer(

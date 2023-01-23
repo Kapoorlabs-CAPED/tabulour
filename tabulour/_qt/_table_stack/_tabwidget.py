@@ -4,17 +4,17 @@ import weakref
 from qtpy import QtWidgets as QtW, QtGui, QtCore
 from qtpy.QtCore import Qt, Signal
 
-from tabulous._qt._table_stack._start import QStartupWidget
-from tabulous._qt._table_stack._utils import create_temporal_line_edit
+from tabulour._qt._table_stack._start import QStartupWidget
+from tabulour._qt._table_stack._utils import create_temporal_line_edit
 
-from tabulous._qt._table._base._table_group import QTableGroup
-from tabulous._qt._clickable_label import QClickableLabel
-from tabulous._qt._action_registry import QActionRegistry
+from tabulour._qt._table._base._table_group import QTableGroup
+from tabulour._qt._clickable_label import QClickableLabel
+from tabulour._qt._action_registry import QActionRegistry
 
 if TYPE_CHECKING:
-    from tabulous._qt._table import QBaseTable, QMutableTable
-    from tabulous._qt._mainwindow._base import _QtMainWidgetBase
-    from tabulous._qt._table_stack._overlay import QOverlayWidget
+    from tabulour._qt._table import QBaseTable, QMutableTable
+    from tabulour._qt._mainwindow._base import _QtMainWidgetBase
+    from tabulour._qt._table_stack._overlay import QOverlayWidget
 
 
 class QTabbedTableStack(QtW.QTabWidget, QActionRegistry[int]):
@@ -43,12 +43,12 @@ class QTabbedTableStack(QtW.QTabWidget, QActionRegistry[int]):
         from . import _tabbar
 
         if tab_position == "top":
-            self.setTabBar(_tabbar.QTabulousTabBar(self))
+            self.setTabBar(_tabbar.QtabulourTabBar(self))
         elif tab_position == "left":
             self.setTabBar(_tabbar.QLeftSideBar(self))
             self.setTabPosition(QtW.QTabWidget.TabPosition.West)
         elif tab_position == "bottom":
-            self.setTabBar(_tabbar.QTabulousTabBar(self))
+            self.setTabBar(_tabbar.QtabulourTabBar(self))
             self.setTabPosition(QtW.QTabWidget.TabPosition.South)
         elif tab_position == "right":
             self.setTabBar(_tabbar.QRightSideBar(self))

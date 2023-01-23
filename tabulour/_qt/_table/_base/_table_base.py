@@ -18,30 +18,30 @@ from ._line_edit import (
     QVerticalHeaderLineEdit,
     QCellLiteralEdit,
 )
-from tabulous._sort_filter_proxy import SortFilterProxy
-from tabulous._dtype import isna
-from tabulous._qt._undo import QtUndoManager, fmt_slice
-from tabulous._qt._svg import QColoredSVGIcon
-from tabulous._keymap import QtKeys, QtKeyMap
-from tabulous._qt._action_registry import QActionRegistry
-from tabulous.types import ProxyType, ItemInfo, HeaderInfo, EvalInfo
-from tabulous.exceptions import (
+from tabulour._sort_filter_proxy import SortFilterProxy
+from tabulour._dtype import isna
+from tabulour._qt._undo import QtUndoManager, fmt_slice
+from tabulour._qt._svg import QColoredSVGIcon
+from tabulour._keymap import QtKeys, QtKeyMap
+from tabulour._qt._action_registry import QActionRegistry
+from tabulour.types import ProxyType, ItemInfo, HeaderInfo, EvalInfo
+from tabulour.exceptions import (
     SelectionRangeError,
     TableImmutableError,
     UnreachableError,
 )
-from tabulous._pd_index import as_not_ranged, as_constructor, is_ranged
+from tabulour._pd_index import as_not_ranged, as_constructor, is_ranged
 
 if TYPE_CHECKING:
     from ._delegate import TableItemDelegate
     from ._side_area import QTableSideArea
     from ._enhanced_table import _QTableViewEnhanced
-    from tabulous._qt._table_stack import QTabbedTableStack
-    from tabulous._qt._mainwindow import _QtMainWidgetBase
-    from tabulous.types import SelectionType, _Sliceable
-    from tabulous._psygnal import InCellRangedSlot
+    from tabulour._qt._table_stack import QTabbedTableStack
+    from tabulour._qt._mainwindow import _QtMainWidgetBase
+    from tabulour.types import SelectionType, _Sliceable
+    from tabulour._psygnal import InCellRangedSlot
 
-logger = logging.getLogger("tabulous")
+logger = logging.getLogger("tabulour")
 ICON_DIR = Path(__file__).parent.parent.parent / "_icons"
 
 _SplitterStyle = """

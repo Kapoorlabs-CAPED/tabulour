@@ -1,6 +1,6 @@
 from typing import Callable
 from ._table_base import QBaseTable, QMutableTable
-from tabulous.exceptions import TriggerParent
+from tabulour.exceptions import TriggerParent
 
 
 @QBaseTable._keymap.bind("Up", dr=-1, dc=0)
@@ -109,8 +109,8 @@ def _(self: QBaseTable):
 @QBaseTable._keymap.bind("Ctrl+S")
 @_check_no_viewer
 def _(self: QBaseTable):
-    from tabulous import _io
-    from tabulous._qt._history import QtFileHistoryManager
+    from tabulour import _io
+    from tabulour._qt._history import QtFileHistoryManager
 
     if path := QtFileHistoryManager.requestPath("w", "Save table"):
         _io.save_file(path, self.getDataFrame())

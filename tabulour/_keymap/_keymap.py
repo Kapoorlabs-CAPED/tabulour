@@ -19,7 +19,7 @@ from qtpy.QtCore import Qt
 from functools import reduce
 from operator import or_
 
-from tabulous.exceptions import TriggerParent
+from tabulour.exceptions import TriggerParent
 
 from ._callback import BoundCallback
 

@@ -14,16 +14,16 @@ from qtpy import QtGui
 from qtpy.QtCore import Qt
 from magicgui.widgets import Widget
 
-from tabulous.exceptions import TableImmutableError
-from tabulous.types import EvalInfo
-from tabulous.color import ColorTuple
-from tabulous._psygnal import InCellRangedSlot
+from tabulour.exceptions import TableImmutableError
+from tabulour.types import EvalInfo
+from tabulour.color import ColorTuple
+from tabulour._psygnal import InCellRangedSlot
 from ._base import TableComponent
-from tabulous.widgets._registry import SupportActionRegistration
+from tabulour.widgets._registry import SupportActionRegistration
 
 if TYPE_CHECKING:
     import pandas as pd
-    from tabulous.widgets import TableBase  # noqa: F401
+    from tabulour.widgets import TableBase  # noqa: F401
 
 
 class _Sequence2D(TableComponent):
@@ -153,7 +153,7 @@ class CellInterface(TableComponent, SupportActionRegistration["TableBase", int])
             raise TypeError("Cannot set widget at slices.")
 
         import pandas as pd
-        from tabulous._qt._table._base._line_edit import QCellLiteralEdit
+        from tabulour._qt._table._base._line_edit import QCellLiteralEdit
 
         row, col = self._normalize_key(key)
 

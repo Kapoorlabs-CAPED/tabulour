@@ -11,7 +11,7 @@ from typing import (
     Iterator,
 )
 
-from tabulous.types import _SingleSelection, SelectionType
+from tabulour.types import _SingleSelection, SelectionType
 from ._base import TableComponent
 
 if TYPE_CHECKING:

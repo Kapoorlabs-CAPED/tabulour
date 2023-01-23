@@ -3,7 +3,7 @@ from typing import TYPE_CHECKING
 from . import _dialogs, _utils
 
 if TYPE_CHECKING:
-    from tabulous.widgets._mainwindow import TableViewerBase
+    from tabulour.widgets._mainwindow import TableViewerBase
 
 SUMMARY_CHOICES = [
     "mean",
@@ -31,7 +31,7 @@ def summarize_table(viewer: TableViewerBase):
         if new:
             viewer.add_table(df, name=f"{table.name}-summary")
         else:
-            from tabulous._qt._table import QTableLayer
+            from tabulour._qt._table import QTableLayer
 
             qtable = QTableLayer(data=df)
             qtable.setZoom(0.8)

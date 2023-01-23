@@ -2,9 +2,9 @@ from __future__ import annotations
 from typing import TYPE_CHECKING
 from qtpy import QtWidgets as QtW, QtGui
 from qtpy.QtCore import Qt, Signal
-from tabulous._qt._clickable_label import QClickableLabel
-from tabulous._utils import load_file_open_path
-from tabulous import commands as cmds
+from tabulour._qt._clickable_label import QClickableLabel
+from tabulour._utils import load_file_open_path
+from tabulour import commands as cmds
 
 if TYPE_CHECKING:
     from .._mainwindow._base import _QtMainWidgetBase

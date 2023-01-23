@@ -3,8 +3,8 @@ from __future__ import annotations
 import argparse
 
 
-class TabulousArgs(argparse.Namespace):
-    """Tabulous specific arguments"""
+class TabulourArgs(argparse.Namespace):
+    """tabulour specific arguments"""
 
     profile: bool
     user_dir: bool
@@ -14,18 +14,18 @@ class TabulousArgs(argparse.Namespace):
     open_file: str | None
 
 
-class TabulousParser(argparse.ArgumentParser):
-    """Tabulous specific argument parser"""
+class TabulourParser(argparse.ArgumentParser):
+    """tabulour specific argument parser"""
 
     def __init__(self):
         from . import __version__
 
-        super().__init__(description="Command line interface of tabulous.")
+        super().__init__(description="Command line interface of tabulour.")
         self.add_argument(
             "-v",
             "--version",
             action="version",
-            version=f"tabulous version {__version__}",
+            version=f"tabulour version {__version__}",
         )
         self.add_argument("--profile", action="store_true")
         self.add_argument("--user-dir", action="store_true")
@@ -35,9 +35,9 @@ class TabulousParser(argparse.ArgumentParser):
 
     def parse_known_args(
         self, args=None, namespace=None
-    ) -> tuple[TabulousArgs, list[str]]:
+    ) -> tuple[TabulourArgs, list[str]]:
         args, unknown = super().parse_known_args(args, namespace)
-        args = TabulousArgs(**vars(args))
+        args = TabulourArgs(**vars(args))
         if not unknown:
             args.open_file = None
         elif len(unknown) == 1:
@@ -48,7 +48,7 @@ class TabulousParser(argparse.ArgumentParser):
 
 
 def main():
-    parser = TabulousParser()
+    parser = TabulourParser()
 
     args, _ = parser.parse_known_args()
 
@@ -60,16 +60,16 @@ def main():
     if args.debug:
         import logging
 
-        logger = logging.getLogger("tabulous")
+        logger = logging.getLogger("tabulour")
         logging.basicConfig(format="%(levelname)s|| %(message)s")
         logger.setLevel(logging.DEBUG)
 
     if args.init_config:
-        from ._utils import CONFIG_PATH, TabulousConfig
+        from ._utils import CONFIG_PATH, tabulourConfig
 
         CONFIG_PATH.unlink(missing_ok=True)
-        TabulousConfig.from_toml(CONFIG_PATH).as_toml()
-        return print(f"tabulous config file initialized at {str(CONFIG_PATH)}.")
+        tabulourConfig.from_toml(CONFIG_PATH).as_toml()
+        return print(f"tabulour config file initialized at {str(CONFIG_PATH)}.")
 
     if args.init_history:
         from ._utils import TXT_PATH

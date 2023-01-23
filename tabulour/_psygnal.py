@@ -30,9 +30,9 @@ import numpy as np
 
 from psygnal import EmitLoopError
 
-from tabulous._range import RectRange, AnyRange, MultiRectRange, TableAnchorBase
-from tabulous._selection_op import iter_extract_with_range
-from tabulous.exceptions import UnreachableError
+from tabulour._range import RectRange, AnyRange, MultiRectRange, TableAnchorBase
+from tabulour._selection_op import iter_extract_with_range
+from tabulour.exceptions import UnreachableError
 
 __all__ = ["SignalArray"]
 
@@ -41,7 +41,7 @@ _P = ParamSpec("_P")
 _R = TypeVar("_R")
 
 if TYPE_CHECKING:
-    from tabulous.widgets._table import _DataFrameTableLayer
+    from tabulour.widgets._table import _DataFrameTableLayer
     import pandas as pd
 
     MethodRef = tuple[weakref.ReferenceType[object], str, Union[Callable, None]]
@@ -384,7 +384,7 @@ class InCellRangedSlot(RangedSlot[_P, _R]):
         """Raise current error in a message box."""
         if self._current_error is None:
             raise ValueError("No error to raise.")
-        from tabulous._qt._traceback import QtErrorMessageBox
+        from tabulour._qt._traceback import QtErrorMessageBox
 
         return QtErrorMessageBox.from_exc(self._current_error).exec_traceback()
 

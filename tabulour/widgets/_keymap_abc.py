@@ -5,8 +5,8 @@ from typing import TYPE_CHECKING
 from ._component import KeyMap
 
 if TYPE_CHECKING:
-    from tabulous._qt._mainwindow import _QtMainWidgetBase
-    from tabulous._qt._table import QBaseTable
+    from tabulour._qt._mainwindow import _QtMainWidgetBase
+    from tabulour._qt._table import QBaseTable
 
 
 class SupportKeyMap(ABC):

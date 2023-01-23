@@ -3,7 +3,7 @@ from typing import TYPE_CHECKING
 from . import _dialogs, _utils
 
 if TYPE_CHECKING:
-    from tabulous.widgets import TableViewerBase, TableBase, SpreadSheet
+    from tabulour.widgets import TableViewerBase, TableBase, SpreadSheet
     from ._arange import _RangeDialog
 
 

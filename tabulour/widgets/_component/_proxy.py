@@ -12,13 +12,13 @@ from typing import (
 )
 
 import numpy as np
-from tabulous.types import ProxyType, _IntArray, _BoolArray, _IntOrBoolArray
+from tabulour.types import ProxyType, _IntArray, _BoolArray, _IntOrBoolArray
 from ._base import TableComponent
-from tabulous._sort_filter_proxy import ComposableFilter, ComposableSorter
+from tabulour._sort_filter_proxy import ComposableFilter, ComposableSorter
 
 if TYPE_CHECKING:
     import pandas as pd
-    from tabulous.widgets._table import TableBase
+    from tabulour.widgets._table import TableBase
 
 
 class ProxyInterface(TableComponent):
@@ -82,7 +82,7 @@ class ProxyInterface(TableComponent):
 
             return table.proxy.set(_sort)
 
-        from tabulous._qt._proxy_button import QHeaderSortButton
+        from tabulour._qt._proxy_button import QHeaderSortButton
 
         if isinstance(by, str):
             by = [by]
@@ -127,7 +127,7 @@ class ProxyInterface(TableComponent):
 
         else:
             if _cfil := _try_ast_parse(expr, self.parent.columns):
-                from tabulous._qt._proxy_button import QHeaderFilterButton
+                from tabulour._qt._proxy_button import QHeaderFilterButton
 
                 index = _cfil.indices().pop()
                 QHeaderFilterButton.install_to_table(self.parent.native, index)
@@ -150,7 +150,7 @@ class ProxyInterface(TableComponent):
         show_menu: bool = False,
     ) -> None:
         """Add filter buttons to the given column header sections."""
-        from tabulous._qt._proxy_button import QHeaderFilterButton
+        from tabulour._qt._proxy_button import QHeaderFilterButton
 
         table = self.parent
         if isinstance(columns, str):

@@ -44,7 +44,7 @@ class PlotInterface(TableComponent):
 
     def new_widget(self, nrows: int = 1, ncols: int = 1, style: str | None = None):
         """Create a new plot widget and add it to the table."""
-        from tabulous._qt._plot import QtMplPlotCanvas
+        from tabulour._qt._plot import QtMplPlotCanvas
 
         table = self.parent
         qviewer = table._qwidget._qtable_view.parentViewer()

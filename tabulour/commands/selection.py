@@ -4,7 +4,7 @@ from magicgui import widgets as mwdg
 from . import _utils, _dialogs
 
 if TYPE_CHECKING:
-    from tabulous.widgets import TableViewerBase
+    from tabulour.widgets import TableViewerBase
 
 
 def copy_data_tab_separated(viewer: TableViewerBase):
@@ -167,7 +167,7 @@ def paste_data_from_rst(viewer: TableViewerBase):
     import pandas as pd
     from docutils.parsers.rst.tableparser import GridTableParser, SimpleTableParser
     from docutils.statemachine import StringList
-    from tabulous._pd_index import char_arange
+    from tabulour._pd_index import char_arange
 
     table = _utils.get_mutable_table(viewer)
     text = _utils.get_clipboard_text().strip()
@@ -248,7 +248,7 @@ def _notify_editability(viewer: TableViewerBase):
 
 def set_column_dtype(viewer: TableViewerBase):
     """Set column specific dtype for data conversion and validation."""
-    from tabulous._dtype import QDtypeWidget
+    from tabulour._dtype import QDtypeWidget
 
     sheet = _utils.get_spreadsheet(viewer)._qwidget
     col = _utils.get_selected_column(viewer)

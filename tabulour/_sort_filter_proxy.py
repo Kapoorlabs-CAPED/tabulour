@@ -6,8 +6,8 @@ from typing import TYPE_CHECKING, Any, Callable, NamedTuple, overload
 import numpy as np
 from enum import Enum
 from functools import reduce
-from tabulous.types import ProxyType, _IntArray, _IntOrBoolArray
-from tabulous.exceptions import TableNotOrderedError
+from tabulour.types import ProxyType, _IntArray, _IntOrBoolArray
+from tabulour.exceptions import TableNotOrderedError
 
 if TYPE_CHECKING:
     import pandas as pd

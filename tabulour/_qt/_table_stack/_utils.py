@@ -6,7 +6,7 @@ from qtpy.QtCore import Signal, Qt
 
 if TYPE_CHECKING:
     from .._mainwindow import _QtMainWidgetBase
-    from tabulous.widgets import TableBase, Table, SpreadSheet
+    from tabulour.widgets import TableBase, Table, SpreadSheet
 
 
 def create_temporal_line_edit(
@@ -61,7 +61,7 @@ class QCompletableLineEdit(QtW.QLineEdit):
 
     def __init__(self, parent=None):
         super().__init__(parent)
-        from tabulous._utils import get_config
+        from tabulour._utils import get_config
 
         table_config = get_config().table
         font = QtGui.QFont(table_config.font, table_config.font_size)

@@ -5,7 +5,7 @@ from typing import Callable, Generator
 from qtpy import QtWidgets as QtW, QtGui
 from psygnal import EmitLoopError
 from ._qt_const import MonospaceFontFamily
-from tabulous._keymap import QtKeys
+from tabulour._keymap import QtKeys
 
 
 class QtTracebackDialog(QtW.QDialog):

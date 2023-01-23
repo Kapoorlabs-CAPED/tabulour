@@ -4,7 +4,7 @@ import numpy as np
 import pandas as pd
 from magicgui.widgets import Container, ComboBox, PushButton, SpinBox
 
-from tabulous._magicgui import find_current_table, SelectionWidget
+from tabulour._magicgui import find_current_table, SelectionWidget
 
 if TYPE_CHECKING:
     from .._table._base import QMutableSimpleTable

@@ -11,8 +11,8 @@ from typing import (
 
 if TYPE_CHECKING:
     from typing_extensions import Self
-    from tabulous.widgets._table import TableBase, SpreadSheet  # noqa: F401
-    from tabulous.widgets._mainwindow import TableViewerBase  # noqa: F401
+    from tabulour.widgets._table import TableBase, SpreadSheet  # noqa: F401
+    from tabulour.widgets._mainwindow import TableViewerBase  # noqa: F401
 
 T = TypeVar("T")
 

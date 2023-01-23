@@ -6,15 +6,15 @@ import weakref
 from qtpy import QtWidgets as QtW, QtCore
 from qtpy.QtWidgets import QAction
 
-from tabulous._qt._svg import QColoredSVGIcon
-from tabulous._qt._multitips import QHasToolTip
-from tabulous import commands as cmds
+from tabulour._qt._svg import QColoredSVGIcon
+from tabulour._qt._multitips import QHasToolTip
+from tabulour import commands as cmds
 
 from ._toolbutton import QColoredToolButton, QMoreToolButton
 
 if TYPE_CHECKING:
-    from tabulous._qt._mainwindow import _QtMainWidgetBase
-    from tabulous.widgets._mainwindow import TableViewerBase
+    from tabulour._qt._mainwindow import _QtMainWidgetBase
+    from tabulour.widgets._mainwindow import TableViewerBase
 
 ICON_DIR = Path(__file__).parent.parent / "_icons"
 

@@ -8,10 +8,10 @@ from typing import Any, Callable, Hashable, TYPE_CHECKING, overload
 import warnings
 from psygnal import SignalGroup, Signal
 
-from tabulous.widgets import _doc, _component as _comp
-from tabulous.widgets._keymap_abc import SupportKeyMap
-from tabulous.types import ItemInfo, HeaderInfo, EvalInfo
-from tabulous._psygnal import SignalArray, InCellRangedSlot
+from tabulour.widgets import _doc, _component as _comp
+from tabulour.widgets._keymap_abc import SupportKeyMap
+from tabulour.types import ItemInfo, HeaderInfo, EvalInfo
+from tabulour._psygnal import SignalArray, InCellRangedSlot
 
 if TYPE_CHECKING:
     from typing_extensions import Self, Literal
@@ -21,13 +21,13 @@ if TYPE_CHECKING:
     from qtpy import QtWidgets as QtW
     from magicgui.widgets import Widget
 
-    from tabulous._qt import QTableLayer, QSpreadSheet, QTableGroupBy, QTableDisplay
-    from tabulous._qt._table import QBaseTable
-    from tabulous._qt._table._base._overlay import QOverlayFrame
+    from tabulour._qt import QTableLayer, QSpreadSheet, QTableGroupBy, QTableDisplay
+    from tabulour._qt._table import QBaseTable
+    from tabulour._qt._table._base._overlay import QOverlayFrame
 
     LayoutString = Literal["horizontal", "vertical"]
 
-logger = logging.getLogger("tabulous")
+logger = logging.getLogger("tabulour")
 
 
 class TableSignals(SignalGroup):
@@ -89,7 +89,7 @@ class TableBase(SupportKeyMap):
         editable: bool = True,
         metadata: dict[str, Any] | None = None,
     ):
-        from tabulous._qt import get_app
+        from tabulour._qt import get_app
 
         _ = get_app()
 
@@ -102,7 +102,7 @@ class TableBase(SupportKeyMap):
         self._qwidget = self._create_backend(_data)
         self._install_actions()
         self._qwidget.connectSelectionChangedSignal(self._emit_selections)
-        from tabulous._map_model import SlotRefMapping
+        from tabulour._map_model import SlotRefMapping
 
         self._qwidget._qtable_view._table_map = SlotRefMapping(self)
         self._view_mode = ViewMode.normal
@@ -207,7 +207,7 @@ class TableBase(SupportKeyMap):
     @property
     def mutable(self):
         """Mutability of the table type."""
-        from tabulous._qt._table import QMutableTable
+        from tabulour._qt._table import QMutableTable
 
         return isinstance(self._qwidget, QMutableTable)
 
@@ -447,7 +447,7 @@ class TableBase(SupportKeyMap):
 
     def save(self, path: str | Path) -> None:
         """Save table data to the given path."""
-        from tabulous._io import save_file
+        from tabulour._io import save_file
 
         save_file(path, self.data)
         return None
@@ -523,7 +523,7 @@ class TableBase(SupportKeyMap):
             if _qviewer := self._qwidget.parentViewer():
                 _viewer = _qviewer._table_viewer
             else:
-                from tabulous.widgets._mainwindow import DummyViewer
+                from tabulour.widgets._mainwindow import DummyViewer
 
                 _viewer = DummyViewer(self)
             return cmd(_viewer)
@@ -531,7 +531,7 @@ class TableBase(SupportKeyMap):
         return _f
 
     def _install_actions(self):
-        from tabulous import commands as cmds
+        from tabulour import commands as cmds
 
         _wrap = self._wrap_command
 
@@ -670,7 +670,7 @@ class Table(_DataFrameTableLayer):
     native: QTableLayer
 
     def _create_backend(self, data: pd.DataFrame) -> QTableLayer:
-        from tabulous._qt import QTableLayer
+        from tabulour._qt import QTableLayer
 
         return QTableLayer(data=data)
 
@@ -693,7 +693,7 @@ class SpreadSheet(_DataFrameTableLayer):
     dtypes = _comp.ColumnDtypeInterface()
 
     def _create_backend(self, data: pd.DataFrame) -> QSpreadSheet:
-        from tabulous._qt import QSpreadSheet
+        from tabulour._qt import QSpreadSheet
 
         return QSpreadSheet(data=data)
 
@@ -702,7 +702,7 @@ class SpreadSheet(_DataFrameTableLayer):
         return self._qwidget._set_widget_at_index(row, column, widget)
 
     def _install_actions(self):
-        from tabulous import commands as cmds
+        from tabulour import commands as cmds
 
         _wrap = self._wrap_command
         # fmt: off
@@ -763,7 +763,7 @@ class GroupBy(TableBase):
     native: QTableGroupBy
 
     def _create_backend(self, data: pd.DataFrame) -> QTableGroupBy:
-        from tabulous._qt import QTableGroupBy
+        from tabulour._qt import QTableGroupBy
 
         return QTableGroupBy(data=data)
 
@@ -818,7 +818,7 @@ class TableDisplay(TableBase):
     native: QTableDisplay
 
     def _create_backend(self, data: Callable[[], Any]) -> QTableDisplay:
-        from tabulous._qt import QTableDisplay
+        from tabulour._qt import QTableDisplay
 
         return QTableDisplay(loader=data)
 

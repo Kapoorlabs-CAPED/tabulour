@@ -6,14 +6,14 @@ from qtpy import QtWidgets as QtW, QtGui
 from qtpy.QtCore import Qt, QEvent, QTimer
 
 from ._base import _QtMainWidgetBase
-from tabulous._keymap import QtKeyMap
-from tabulous.types import TabPosition
-from tabulous._utils import get_config
+from tabulour._keymap import QtKeyMap
+from tabulour.types import TabPosition
+from tabulour._utils import get_config
 
 if TYPE_CHECKING:
-    from tabulous.widgets import TableViewer
-    from tabulous._qt._table_stack import QTabbedTableStack
-    from tabulous._qt._dockwidget import QtDockWidget
+    from tabulour.widgets import TableViewer
+    from tabulour._qt._table_stack import QTabbedTableStack
+    from tabulour._qt._dockwidget import QtDockWidget
 
 ICON_DIR = Path(__file__).parent.parent / "_icons"
 STYLE_DIR = Path(__file__).parent.parent
@@ -48,7 +48,7 @@ class QMainWidget(QtW.QSplitter, _QtMainWidgetBase):
     def setToolBarVisible(self, visible: bool):
         """Set visibility of toolbar"""
         if visible and self._toolbar is None:
-            from tabulous._qt._toolbar import QTableStackToolBar
+            from tabulour._qt._toolbar import QTableStackToolBar
 
             self._toolbar = QTableStackToolBar(self)
             self.insertWidget(0, self._toolbar)
@@ -66,7 +66,7 @@ class QMainWidget(QtW.QSplitter, _QtMainWidgetBase):
     def setConsoleVisible(self, visible: bool) -> None:
         """Set visibility of embeded console widget."""
         if visible and self._console_widget is None:
-            from tabulous._qt._console import QtConsole
+            from tabulour._qt._console import QtConsole
 
             qtconsole = QtConsole()
             qtconsole.connect_parent(self._table_viewer)
@@ -119,7 +119,7 @@ class QMainWindow(QtW.QMainWindow, _QtMainWidgetBase):
     ):
         super().__init__()
         _QtMainWidgetBase.__init__(self, tab_position=tab_position)
-        self.setWindowTitle("tabulous")
+        self.setWindowTitle("tabulour")
         self.setWindowIcon(QtGui.QIcon(str(ICON_DIR / "window_icon.png")))
         with open(STYLE_DIR / "_style.qss") as f:
             style = f.read()
@@ -128,8 +128,8 @@ class QMainWindow(QtW.QMainWindow, _QtMainWidgetBase):
         self._console_dock_widget = None
         self._dock_widgets = weakref.WeakValueDictionary()
 
-        from tabulous._utils import get_config
-        from tabulous._qt._toolbar import QTableStackToolBar
+        from tabulour._utils import get_config
+        from tabulour._qt._toolbar import QTableStackToolBar
 
         _config = get_config()
         self._ask_on_close = _config.window.ask_on_close
@@ -155,7 +155,7 @@ class QMainWindow(QtW.QMainWindow, _QtMainWidgetBase):
     def setConsoleVisible(self, visible: bool) -> None:
         """Set visibility of embeded console widget."""
         if visible and self._console_widget is None:
-            from tabulous._qt._console import QtConsole
+            from tabulour._qt._console import QtConsole
 
             qtconsole = QtConsole()
             qtconsole.connect_parent(self._table_viewer)
@@ -218,7 +218,7 @@ class QMainWindow(QtW.QMainWindow, _QtMainWidgetBase):
         if type == QEvent.Type.Close:
             if self._ask_on_close and not self._tablestack.isEmpty():
                 msgbox = QtW.QMessageBox(self)
-                msgbox.setWindowTitle("tabulous")
+                msgbox.setWindowTitle("tabulour")
                 msgbox.setIcon(QtW.QMessageBox.Icon.Question)
                 msgbox.setText("Are you sure to close this window?")
                 btn = msgbox.addButton(QtW.QMessageBox.StandardButton.Yes)

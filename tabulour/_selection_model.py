@@ -3,7 +3,7 @@ from typing import TYPE_CHECKING, Callable, Iterable, Iterator, NamedTuple
 from contextlib import contextmanager
 from psygnal import Signal
 
-from tabulous._range import TableAnchorBase, translate_slice
+from tabulour._range import TableAnchorBase, translate_slice
 
 if TYPE_CHECKING:
     Range = tuple[slice, slice]

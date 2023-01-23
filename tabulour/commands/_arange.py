@@ -12,7 +12,7 @@ from magicgui.widgets import (
     LineEdit,
     ComboBox,
 )
-from tabulous._magicgui import SelectionWidget, TimeDeltaEdit
+from tabulour._magicgui import SelectionWidget, TimeDeltaEdit
 
 import pandas as pd
 

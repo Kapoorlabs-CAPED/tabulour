@@ -1,10 +1,10 @@
 from __future__ import annotations
 from typing import TYPE_CHECKING
-from tabulous.exceptions import SelectionRangeError
+from tabulour.exceptions import SelectionRangeError
 from . import _utils, _dialogs
 
 if TYPE_CHECKING:
-    from tabulous.widgets import TableViewerBase
+    from tabulour.widgets import TableViewerBase
 
 _OPACITY_CONFIG = {
     "min": 0,
@@ -27,7 +27,7 @@ _BRIGHTNESS_CONFIG = {
 
 def set_text_colormap(viewer: TableViewerBase) -> None:
     """Set text colormap to a column"""
-    from tabulous._colormap import exec_colormap_dialog
+    from tabulour._colormap import exec_colormap_dialog
 
     table, column_name = _utils.get_table_and_column_name(viewer)
     if cmap := exec_colormap_dialog(
@@ -66,7 +66,7 @@ def adjust_brightness_text_colormap(viewer: TableViewerBase) -> None:
 
 def set_background_colormap(viewer: TableViewerBase) -> None:
     """Set background colormap to a column"""
-    from tabulous._colormap import exec_colormap_dialog
+    from tabulour._colormap import exec_colormap_dialog
 
     table, column_name = _utils.get_table_and_column_name(viewer)
     if cmap := exec_colormap_dialog(
@@ -105,7 +105,7 @@ def adjust_brightness_background_colormap(viewer: TableViewerBase) -> None:
 
 def set_text_formatter(viewer: TableViewerBase) -> None:
     """Set text formatter"""
-    from tabulous._text_formatter import exec_formatter_dialog
+    from tabulour._text_formatter import exec_formatter_dialog
 
     table, column_name = _utils.get_table_and_column_name(viewer)
 

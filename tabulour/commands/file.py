@@ -3,7 +3,7 @@ from typing import TYPE_CHECKING
 from ._dialogs import choose_one
 
 if TYPE_CHECKING:
-    from tabulous.widgets._mainwindow import TableViewerBase
+    from tabulour.widgets._mainwindow import TableViewerBase
 
 __all__ = ["open_table", "open_spreadsheet", "save_table", "open_sample"]
 

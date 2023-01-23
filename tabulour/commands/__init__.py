@@ -7,8 +7,8 @@ from types import FunctionType, ModuleType
 from qt_command_palette import get_palette
 
 if TYPE_CHECKING:
-    from tabulous._qt._mainwindow import _QtMainWidgetBase
-    from tabulous.widgets import TableViewerBase
+    from tabulour._qt._mainwindow import _QtMainWidgetBase
+    from tabulour.widgets import TableViewerBase
 
 _SUB_MODULES: list[ModuleType] = [
     file,
@@ -41,7 +41,7 @@ def register_command(
     desc: str = None,
 ) -> Callable[[Callable[[TableViewerBase], Any]], Callable[[TableViewerBase], Any]]:
     def wrapper(f):
-        palette = get_palette("tabulous")
+        palette = get_palette("tabulour")
         if desc is None:
             fname = getattr(f, "__name__", None)
             if not isinstance(fname, str):

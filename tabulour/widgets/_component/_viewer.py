@@ -3,7 +3,7 @@ from typing import Callable, Any, TYPE_CHECKING
 from ._base import ViewerComponent
 
 if TYPE_CHECKING:
-    from tabulous.widgets import TableViewerBase
+    from tabulour.widgets import TableViewerBase
 
 
 class Toolbar(ViewerComponent):
@@ -84,7 +84,7 @@ class CommandPalette(ViewerComponent):
         key: str | None = None,
     ):
         """Register a command."""
-        from tabulous.commands import register_command
+        from tabulour.commands import register_command
 
         if callable(name):
             name = None

@@ -9,11 +9,11 @@ from qtpy.QtCore import Signal
 from qtpy import QtWidgets as QtW, QtCore, QtGui
 from qtconsole.rich_jupyter_widget import RichJupyterWidget
 
-from tabulous._keymap import QtKeys, QtKeyMap
+from tabulour._keymap import QtKeys, QtKeyMap
 
 if TYPE_CHECKING:
-    from tabulous._qt._dockwidget import QtDockWidget
-    from tabulous.widgets._mainwindow import TableViewerBase
+    from tabulour._qt._dockwidget import QtDockWidget
+    from tabulour.widgets._mainwindow import TableViewerBase
 
     class RichJupyterWidget(RichJupyterWidget, QtW.QWidget):
         """To fix typing problem"""
@@ -97,7 +97,7 @@ class QtConsole(RichJupyterWidget):
         if self.shell is not None:
 
             from IPython.paths import get_ipython_dir
-            from tabulous._utils import get_config
+            from tabulour._utils import get_config
 
             config = get_config()
             _ns = config.console_namespace
@@ -115,7 +115,7 @@ class QtConsole(RichJupyterWidget):
                 self.shell.push(_globals)
 
             # update namespaces
-            import tabulous as tbl
+            import tabulour as tbl
             import numpy as np
             import pandas as pd
 
@@ -123,7 +123,7 @@ class QtConsole(RichJupyterWidget):
                 _ns.viewer: widget,
                 _ns.numpy: np,
                 _ns.pandas: pd,
-                _ns.tabulous: tbl,
+                _ns.tabulour: tbl,
             }
             self.shell.push(ns)
 

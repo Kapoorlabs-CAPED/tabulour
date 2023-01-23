@@ -3,15 +3,15 @@ from typing import TYPE_CHECKING, Iterator, cast
 from qtpy import QtWidgets as QtW, QtCore, QtGui
 from qtpy.QtCore import Qt, Signal
 
-from tabulous._qt._action_registry import QActionRegistry
-from tabulous._qt._proxy_button import HeaderAnchorMixin
+from tabulour._qt._action_registry import QActionRegistry
+from tabulour._qt._proxy_button import HeaderAnchorMixin
 
 if TYPE_CHECKING:
     from ._enhanced_table import _QTableViewEnhanced
 
 
 class QDataFrameHeaderView(QtW.QHeaderView, QActionRegistry[int]):
-    """The header view for the tabulous tables."""
+    """The header view for the tabulour tables."""
 
     _Orientation: Qt.Orientation
     selectionChangedSignal = Signal(int, int)

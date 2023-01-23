@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
-    from tabulous.widgets import TableViewerBase
+    from tabulour.widgets import TableViewerBase
 
 
 def show_keymap(viewer: TableViewerBase):
@@ -66,8 +66,8 @@ def toggle_focus(viewer: TableViewerBase):
 
 def add_text_edit(viewer: TableViewerBase):
     """Add a note (text edit) dock widget."""
-    from tabulous import TableViewer, TableViewerWidget
-    from tabulous._qt._qt_const import MonospaceFontFamily
+    from tabulour import TableViewer, TableViewerWidget
+    from tabulour._qt._qt_const import MonospaceFontFamily
     from qtpy import QtWidgets as QtW, QtGui
 
     txt_edit = QtW.QTextEdit()

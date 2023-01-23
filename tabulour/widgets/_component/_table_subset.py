@@ -4,14 +4,14 @@ from typing import TYPE_CHECKING, Sequence, TypeVar, Union, overload, Callable
 
 import numpy as np
 
-from tabulous.types import ColorMapping
+from tabulour.types import ColorMapping
 from ._base import TableComponent
 from ._column_setting import _Void
 
 if TYPE_CHECKING:
     from numpy.typing import NDArray
     import pandas as pd
-    from tabulous.widgets import TableBase
+    from tabulour.widgets import TableBase
     from ._column_setting import (
         _Interpolatable,
         _ColormapInterface,

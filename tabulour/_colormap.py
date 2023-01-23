@@ -1,9 +1,9 @@
 from __future__ import annotations
 from typing import Iterable, TYPE_CHECKING, Union
 import numpy as np
-from tabulous.color import ColorTuple, normalize_color
-from tabulous.types import ColorType
-from tabulous._dtype import isna, get_converter
+from tabulour.color import ColorTuple, normalize_color
+from tabulour.types import ColorType
+from tabulour._dtype import isna, get_converter
 
 if TYPE_CHECKING:
     from pandas.core.dtypes.dtypes import CategoricalDtype
@@ -18,7 +18,7 @@ _DEFAULT_MAX = "#FF696B"
 
 def exec_colormap_dialog(ds: pd.Series, parent=None):
     """Open a dialog to define a colormap for a series."""
-    from tabulous._qt._color_edit import ColorEdit
+    from tabulour._qt._color_edit import ColorEdit
     from magicgui.widgets import Dialog, LineEdit, Container
 
     dtype = ds.dtype

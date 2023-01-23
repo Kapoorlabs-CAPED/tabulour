@@ -4,7 +4,7 @@ from typing import Hashable, Iterator, TYPE_CHECKING, Literal, Union, SupportsIn
 from functools import singledispatch
 import re
 
-from tabulous.exceptions import UnreachableError
+from tabulour.exceptions import UnreachableError
 
 if TYPE_CHECKING:
     import pandas as pd

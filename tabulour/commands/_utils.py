@@ -3,7 +3,7 @@ from __future__ import annotations
 from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
-    from tabulous.widgets import TableBase, TableViewerBase, Table, SpreadSheet
+    from tabulour.widgets import TableBase, TableViewerBase, Table, SpreadSheet
 
 __void = object()
 
@@ -31,7 +31,7 @@ def get_mutable_table(viewer: TableViewerBase, default=__void) -> Table | Spread
 
     if default is not __void:
         return default
-    from tabulous.exceptions import TableImmutableError
+    from tabulour.exceptions import TableImmutableError
 
     raise TableImmutableError(f"Table {table.name!r} is immutable.")
 

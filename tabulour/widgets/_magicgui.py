@@ -5,7 +5,7 @@ from qtpy import QtWidgets as QtW
 from magicgui.widgets import Widget
 from magicgui.backends._qtpy.widgets import QBaseWidget
 
-from tabulous.widgets._table import Table, SpreadSheet
+from tabulour.widgets._table import Table, SpreadSheet
 
 
 class MagicTable(Widget, Table):

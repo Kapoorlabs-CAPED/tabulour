@@ -12,13 +12,13 @@ from ._header_view import QHorizontalHeaderView, QVerticalHeaderView
 from ._table_base import QBaseTable, QMutableTable
 from ._line_edit import QCellLiteralEdit, QCellLabelEdit
 
-from tabulous._keymap import QtKeys
-from tabulous._selection_model import RangesModel, SelectionModel, Index
+from tabulour._keymap import QtKeys
+from tabulour._selection_model import RangesModel, SelectionModel, Index
 
 if TYPE_CHECKING:
     from ._delegate import TableItemDelegate
-    from tabulous._qt._mainwindow import _QtMainWidgetBase
-    from tabulous._map_model import SlotRefMapping
+    from tabulour._qt._mainwindow import _QtMainWidgetBase
+    from tabulour._map_model import SlotRefMapping
 
 # Flags
 _SCROLL_PER_PIXEL = QtW.QAbstractItemView.ScrollMode.ScrollPerPixel
@@ -31,7 +31,7 @@ S_COLOR_B = Qt.GlobalColor.cyan
 CUR_COLOR = QtGui.QColor(128, 128, 128, 108)
 HOV_COLOR = QtGui.QColor(75, 75, 242, 80)
 
-logger = logging.getLogger("tabulous")
+logger = logging.getLogger("tabulour")
 
 
 class MouseTrack:
@@ -76,7 +76,7 @@ class _QTableViewEnhanced(QtW.QTableView):
         else:
             self._parent_table = None
 
-        from tabulous._utils import get_config
+        from tabulour._utils import get_config
 
         table = get_config().table
 
@@ -133,7 +133,7 @@ class _QTableViewEnhanced(QtW.QTableView):
         self._current_drawing_slot_ranges = None
 
         # initialize with dummy mapping
-        from tabulous._map_model import DummySlotRefMapping
+        from tabulour._map_model import DummySlotRefMapping
 
         self._table_map = DummySlotRefMapping()
 

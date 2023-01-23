@@ -17,7 +17,7 @@ from magicgui.widgets import (
 )
 from magicgui.backends._qtpy.widgets import QBaseWidget
 
-from tabulous.widgets import (
+from tabulour.widgets import (
     TableViewerBase,
     TableBase,
     Table,
@@ -25,21 +25,21 @@ from tabulous.widgets import (
     TableViewerWidget,
     MagicTable,
 )
-from tabulous.types import (
+from tabulour.types import (
     TableColumn,
     TableData,
     TableDataTuple,
     TableInfoInstance,
     TabPosition,
 )
-from tabulous._selection_op import (
+from tabulour._selection_op import (
     SelectionOperator,
     ILocSelOp,
     parse,
     construct,
 )
 
-from tabulous._timedelta import TimeDeltaEdit
+from tabulour._timedelta import TimeDeltaEdit
 
 if TYPE_CHECKING:
     import pandas as pd
@@ -111,7 +111,7 @@ _DEFAULT_NAME = "Result"
 
 
 def find_table_viewer_ancestor(widget: Widget | QtW.QWidget) -> TableViewerBase | None:
-    from tabulous._qt._mainwindow import _QtMainWidgetBase
+    from tabulour._qt._mainwindow import _QtMainWidgetBase
 
     if isinstance(widget, Widget):
         qwidget = widget.native
@@ -431,7 +431,7 @@ def dialog_factory_mpl(function: _F) -> _F:
     def _runner(parent=None, **param_options):
         dlg = magicgui(function, **param_options)
 
-        from tabulous._qt._plot import QtMplPlotCanvas
+        from tabulour._qt._plot import QtMplPlotCanvas
 
         style = None
         bg = None

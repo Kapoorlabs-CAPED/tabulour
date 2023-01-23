@@ -6,10 +6,10 @@ from qtpy.QtCore import Qt, Signal
 import pandas as pd
 
 from ._line_edit import QCellLiteralEdit
-from tabulous._dtype import isna
-from tabulous.color import normalize_color, ColorType
-from tabulous._text_formatter import DefaultFormatter
-from tabulous._map_model import TableMapping
+from tabulour._dtype import isna
+from tabulour.color import normalize_color, ColorType
+from tabulour._text_formatter import DefaultFormatter
+from tabulour._map_model import TableMapping
 
 if TYPE_CHECKING:
     from ._table_base import QBaseTable
@@ -181,7 +181,7 @@ class AbstractDataFrameModel(QtCore.QAbstractTableModel):
             qlabel = QtW.QLabel(text, self.parent())
             qlabel.setStyleSheet("background-color: transparent; color: gray;")
             qlabel.setAlignment(Qt.AlignmentFlag.AlignCenter)
-            from tabulous._utils import get_config
+            from tabulour._utils import get_config
 
             table_config = get_config().table
             font = QtGui.QFont(table_config.font, table_config.font_size)

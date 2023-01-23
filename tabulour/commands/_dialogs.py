@@ -7,11 +7,11 @@ import ast
 import numpy as np
 
 # NOTE: Axes should be imported here!
-from tabulous.widgets import TableBase, TableViewerBase
-from tabulous.types import TableData
-from tabulous.exceptions import SelectionRangeError
-from tabulous._selection_op import SelectionOperator
-from tabulous._magicgui import dialog_factory, dialog_factory_mpl, Axes
+from tabulour.widgets import TableBase, TableViewerBase
+from tabulour.types import TableData
+from tabulour.exceptions import SelectionRangeError
+from tabulour._selection_op import SelectionOperator
+from tabulour._magicgui import dialog_factory, dialog_factory_mpl, Axes
 
 if TYPE_CHECKING:
     import pandas as pd
@@ -63,7 +63,7 @@ def concat(
     if out.index.duplicated().any():
         out.index = range(out.index.size)
     if out.columns.duplicated().any():
-        from tabulous._pd_index import char_range_index
+        from tabulour._pd_index import char_range_index
 
         out.columns = char_range_index(out.columns.size)
     return out

@@ -3,15 +3,15 @@ from __future__ import annotations
 from typing import TYPE_CHECKING, Any, Callable
 import logging
 from qt_command_palette import get_palette
-from tabulous import commands as cmds
-from tabulous._utils import get_config
+from tabulour import commands as cmds
+from tabulour._utils import get_config
 from ._mainwidgets import QMainWindow, QMainWidget
 
 if TYPE_CHECKING:
     from ._base import _QtMainWidgetBase
-    from tabulous.widgets import TableViewerBase
+    from tabulour.widgets import TableViewerBase
 
-logger = logging.getLogger("tabulous")
+logger = logging.getLogger("tabulour")
 
 
 def _command_to_viewer_function(
@@ -27,7 +27,7 @@ def _command_to_viewer_function(
 
 def load_all_commands():
 
-    palette = get_palette("tabulous")
+    palette = get_palette("tabulour")
 
     window_group = palette.add_group("Window")
     file_group = palette.add_group("File")

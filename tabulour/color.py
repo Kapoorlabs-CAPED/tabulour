@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Any, NamedTuple
 from functools import lru_cache
 import colorsys
-from tabulous.types import ColorType, ColorMapping
+from tabulour.types import ColorType, ColorMapping
 
 import numpy as np
 

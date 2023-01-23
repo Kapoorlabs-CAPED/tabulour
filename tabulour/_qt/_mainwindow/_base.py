@@ -7,16 +7,16 @@ from qt_command_palette import get_palette
 
 from ._namespace import Namespace
 
-from tabulous._qt._table_stack import QTabbedTableStack
-from tabulous._qt._history import QtFileHistoryManager
-from tabulous._keymap import QtKeyMap
-from tabulous.types import TabPosition
-from tabulous._utils import load_cell_namespace
+from tabulour._qt._table_stack import QTabbedTableStack
+from tabulour._qt._history import QtFileHistoryManager
+from tabulour._keymap import QtKeyMap
+from tabulour.types import TabPosition
+from tabulour._utils import load_cell_namespace
 
 if TYPE_CHECKING:
-    from tabulous._qt._toolbar import QTableStackToolBar
-    from tabulous._qt._console import QtConsole
-    from tabulous.widgets import TableViewer
+    from tabulour._qt._toolbar import QTableStackToolBar
+    from tabulour._qt._console import QtConsole
+    from tabulour.widgets import TableViewer
 
 
 class _EventFilter(QtCore.QObject):
@@ -43,7 +43,7 @@ class _QtMainWidgetBase(QtW.QWidget):
         tab_position: TabPosition | str = TabPosition.top,
     ):
         super().__init__()
-        self.setObjectName(f"tabulous.{type(self).__name__}")
+        self.setObjectName(f"tabulour.{type(self).__name__}")
         tab_position = TabPosition(tab_position)
         self._tablestack = QTabbedTableStack(tab_position=tab_position.name)
         self._toolbar = None
@@ -66,7 +66,7 @@ class _QtMainWidgetBase(QtW.QWidget):
         self._namespace.update_safely(load_cell_namespace())
 
         # install command palette
-        self._command_palette = get_palette("tabulous")
+        self._command_palette = get_palette("tabulour")
         self._command_palette.install(self)
         qcommand_palette = self._command_palette.get_widget(self)
         qcommand_palette.hidden.connect(self._on_hidden)

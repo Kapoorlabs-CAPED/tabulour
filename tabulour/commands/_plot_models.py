@@ -8,9 +8,9 @@ import numpy as np
 import pandas as pd
 
 # NOTE: Axes should be imported here!
-from tabulous.widgets import TableBase
-from tabulous._selection_op import SelectionOperator
-from tabulous._magicgui import Axes
+from tabulour.widgets import TableBase
+from tabulour._selection_op import SelectionOperator
+from tabulour._magicgui import Axes
 
 if TYPE_CHECKING:
     from matplotlib.artist import Artist
@@ -18,7 +18,7 @@ if TYPE_CHECKING:
     from matplotlib.lines import Line2D
     from matplotlib.patches import Polygon
     from matplotlib.container import BarContainer
-    from tabulous._qt._plot import QtMplPlotCanvas
+    from tabulour._qt._plot import QtMplPlotCanvas
 
 logger = logging.getLogger(__name__)
 _T = TypeVar("_T", bound="Artist")

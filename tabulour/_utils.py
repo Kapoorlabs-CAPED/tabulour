@@ -8,10 +8,10 @@ from pathlib import Path
 from appdirs import user_config_dir
 
 
-TXT_PATH = Path(user_config_dir("tabulous", "tabulous", "history.txt"))
-CONFIG_PATH = Path(user_config_dir("tabulous", "tabulous", "config.toml"))
-CELL_NAMESPACE_PATH = Path(user_config_dir("tabulous", "tabulous", "cell_namespace.py"))
-POST_INIT_PATH = Path(user_config_dir("tabulous", "tabulous", "post_init.py"))
+TXT_PATH = Path(user_config_dir("tabulour", "tabulour", "history.txt"))
+CONFIG_PATH = Path(user_config_dir("tabulour", "tabulour", "config.toml"))
+CELL_NAMESPACE_PATH = Path(user_config_dir("tabulour", "tabulour", "cell_namespace.py"))
+POST_INIT_PATH = Path(user_config_dir("tabulour", "tabulour", "post_init.py"))
 
 
 def warn_on_exc(default=None):
@@ -106,7 +106,7 @@ def get_post_initializers():
         # if file is empty, don't do anything
         return None
 
-    from tabulous.post_init import TableInitializer, ViewerInitializer
+    from tabulour.post_init import TableInitializer, ViewerInitializer
 
     table_initializer = TableInitializer()
     viewer_initializer = ViewerInitializer()
@@ -119,7 +119,7 @@ def get_post_initializers():
 
 
 def prep_default_keybindings() -> dict[str, str | list[str]]:
-    from tabulous.commands import DEFAULT_KEYBINDING_SETTING
+    from tabulour.commands import DEFAULT_KEYBINDING_SETTING
 
     kb = {}
     for cmd, seq in DEFAULT_KEYBINDING_SETTING:
@@ -133,7 +133,7 @@ def prep_default_keybindings() -> dict[str, str | list[str]]:
 class ConsoleNamespace:
     """Default namespace of the console."""
 
-    tabulous: str = "tbl"
+    tabulour: str = "tbl"
     viewer: str = "viewer"
     pandas: str = "pd"
     numpy: str = "np"
@@ -169,7 +169,7 @@ class Window:
 
 
 @dataclass
-class TabulousConfig:
+class tabulourConfig:
     """The config model."""
 
     console_namespace: ConsoleNamespace = field(default_factory=ConsoleNamespace)
@@ -181,7 +181,7 @@ class TabulousConfig:
     )
 
     @classmethod
-    def from_toml(cls, path: Path = CONFIG_PATH) -> TabulousConfig:
+    def from_toml(cls, path: Path = CONFIG_PATH) -> tabulourConfig:
         """Load the config file."""
         import toml
 
@@ -224,14 +224,14 @@ class TabulousConfig:
         )
 
 
-CONFIG: TabulousConfig | None = None
+CONFIG: tabulourConfig | None = None
 
 
-def get_config(reload: bool = False) -> TabulousConfig:
+def get_config(reload: bool = False) -> tabulourConfig:
     """Get the global config."""
     global CONFIG
     if CONFIG is None or reload:
-        CONFIG = TabulousConfig.from_toml()
+        CONFIG = tabulourConfig.from_toml()
     return CONFIG
 
 
@@ -267,7 +267,7 @@ _POST_INIT_TEXT = """
 
 # First, get initializer objects.
 
-# from tabulous.post_init import get_initializers
+# from tabulour.post_init import get_initializers
 # viewer, table = get_initializers()
 
 # These objects has similar interface to the viewer and table classes.

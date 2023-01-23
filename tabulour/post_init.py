@@ -12,7 +12,7 @@ from typing import (
 )
 
 if TYPE_CHECKING:
-    from tabulous.widgets import TableViewerBase, TableBase
+    from tabulour.widgets import TableViewerBase, TableBase
     from typing_extensions import Self
 
 _T = TypeVar("_T")

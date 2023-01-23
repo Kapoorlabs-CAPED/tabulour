@@ -13,11 +13,11 @@ from qtpy.QtCore import Qt
 from collections_undo import arguments
 
 from ._base import AbstractDataFrameModel, QMutableSimpleTable
-from tabulous._dtype import get_converter, get_dtype, DTypeMap, DefaultValidator
-from tabulous.color import normalize_color
-from tabulous.types import ItemInfo
-from tabulous._text_formatter import DefaultFormatter
-from tabulous._pd_index import char_range_index, is_ranged, char_arange
+from tabulour._dtype import get_converter, get_dtype, DTypeMap, DefaultValidator
+from tabulour.color import normalize_color
+from tabulour.types import ItemInfo
+from tabulour._text_formatter import DefaultFormatter
+from tabulour._pd_index import char_range_index, is_ranged, char_arange
 
 if TYPE_CHECKING:
     from magicgui.widgets._bases import ValueWidget
@@ -35,7 +35,7 @@ class SpreadSheetModel(AbstractDataFrameModel):
 
     def __init__(self, parent=None):
         super().__init__(parent)
-        from tabulous._utils import get_config
+        from tabulour._utils import get_config
 
         self._table_config = get_config().table
         self._columns_dtype = self.parent()._columns_dtype
@@ -670,7 +670,7 @@ class QSpreadSheet(QMutableSimpleTable):
         index = self.model().index(r, c)
         if wdt := self._qtable_view.indexWidget(index):
             try:
-                self.itemChangedSignal.disconnect(wdt._tabulous_callback)
+                self.itemChangedSignal.disconnect(wdt._tabulour_callback)
             except TypeError:
                 pass
             wdt.close()
@@ -702,7 +702,7 @@ class QSpreadSheet(QMutableSimpleTable):
 
         if self.model().df.iat[r, c] != "":
             _sig()
-        widget.native._tabulous_callback = _sig
+        widget.native._tabulour_callback = _sig
         self.itemChangedSignal.connect(_sig)
         widget.changed.connect(lambda val: self.setDataFrameValue(r, c, str(val)))
         self._qtable_view.setIndexWidget(index, widget.native)

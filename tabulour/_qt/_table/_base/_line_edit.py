@@ -8,13 +8,13 @@ from typing import TYPE_CHECKING, cast
 from qtpy import QtWidgets as QtW, QtCore, QtGui
 from qtpy.QtCore import Qt
 
-from tabulous._qt._qt_const import MonospaceFontFamily
-from tabulous._keymap import QtKeys
-from tabulous.exceptions import UnreachableError
-from tabulous.types import HeaderInfo, EvalInfo
-from tabulous._range import RectRange, MultiRectRange
-from tabulous._utils import get_config
-from tabulous._selection_op import (
+from tabulour._qt._qt_const import MonospaceFontFamily
+from tabulour._keymap import QtKeys
+from tabulour.exceptions import UnreachableError
+from tabulour.types import HeaderInfo, EvalInfo
+from tabulour._range import RectRange, MultiRectRange
+from tabulour._utils import get_config
+from tabulour._selection_op import (
     find_last_dataframe_expr,
     construct,
     iter_extract,

@@ -17,15 +17,15 @@ import warnings
 
 import numpy as np
 
-from tabulous.types import ColorMapping, ColorType
-from tabulous.color import InvertedColormap, OpacityColormap, BrightenedColormap
-from tabulous._dtype import get_converter, get_converter_from_type, isna
-from tabulous._colormap import segment_by_float, segment_by_time
+from tabulour.types import ColorMapping, ColorType
+from tabulour.color import InvertedColormap, OpacityColormap, BrightenedColormap
+from tabulour._dtype import get_converter, get_converter_from_type, isna
+from tabulour._colormap import segment_by_float, segment_by_time
 from ._base import Component, TableComponent
 
 if TYPE_CHECKING:
     from pandas.core.dtypes.dtypes import ExtensionDtype
-    from tabulous.widgets._table import TableBase, SpreadSheet  # noqa: F401
+    from tabulour.widgets._table import TableBase, SpreadSheet  # noqa: F401
 
     _DtypeLike = Union[ExtensionDtype, np.dtype]
 
