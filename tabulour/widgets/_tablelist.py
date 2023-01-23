@@ -3,12 +3,11 @@ import re
 from typing import Any, TYPE_CHECKING
 from psygnal import Signal, SignalGroup, SignalInstance
 from psygnal.containers import EventedList
-
+from .. import commands as cmds
 from ._table import TableBase
 from ._registry import SupportActionRegistration
 
-if TYPE_CHECKING:
-    from ._mainwindow import TableViewer
+from ._mainwindow import TableViewer
 
 # Modified from psygnal/containers/_evented_list.py. See https://github.com/tlambert03/psygnal.
 class NamedListEvents(SignalGroup):
@@ -164,7 +163,7 @@ class TableList(EventedList[TableBase], SupportActionRegistration["TableViewer",
     def _install_contextmenu(self):
         """Install the default contextmenu."""
 
-        from tabulous import commands as cmds
+        
 
         def _wrap(cmd):
             return lambda *_: cmd(self._parent)

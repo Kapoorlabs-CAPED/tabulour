@@ -7,7 +7,7 @@ from magicgui.widgets._bases import ValueWidget
 from magicgui.backends._qtpy.widgets import QBaseValueWidget
 from magicgui.application import use_app
 
-from tabulour.color import normalize_color, rgba_to_str
+from ..color import normalize_color, rgba_to_str
 
 
 # modified from napari/_qt/widgets/qt_color_swatch.py

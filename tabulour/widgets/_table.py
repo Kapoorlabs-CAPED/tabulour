@@ -8,24 +8,23 @@ from typing import Any, Callable, Hashable, TYPE_CHECKING, overload
 import warnings
 from psygnal import SignalGroup, Signal
 
-from tabulour.widgets import _doc, _component as _comp
-from tabulour.widgets._keymap_abc import SupportKeyMap
-from tabulour.types import ItemInfo, HeaderInfo, EvalInfo
-from tabulour._psygnal import SignalArray, InCellRangedSlot
+from ..widgets import _doc, _component as _comp
+from ..widgets._keymap_abc import SupportKeyMap
+from ..types import ItemInfo, HeaderInfo, EvalInfo
+from .._psygnal import SignalArray, InCellRangedSlot
 
-if TYPE_CHECKING:
-    from typing_extensions import Self, Literal
-    import numpy as np
-    import pandas as pd
-    from collections_undo import UndoManager
-    from qtpy import QtWidgets as QtW
-    from magicgui.widgets import Widget
+from typing_extensions import Self, Literal
+import numpy as np
+import pandas as pd
+from collections_undo import UndoManager
+from qtpy import QtWidgets as QtW
+from magicgui.widgets import Widget
 
-    from tabulour._qt import QTableLayer, QSpreadSheet, QTableGroupBy, QTableDisplay
-    from tabulour._qt._table import QBaseTable
-    from tabulour._qt._table._base._overlay import QOverlayFrame
+from .._qt import QTableLayer, QSpreadSheet, QTableGroupBy, QTableDisplay
+from .._qt._table import QBaseTable
+from .._qt._table._base._overlay import QOverlayFrame
 
-    LayoutString = Literal["horizontal", "vertical"]
+LayoutString = Literal["horizontal", "vertical"]
 
 logger = logging.getLogger("tabulour")
 

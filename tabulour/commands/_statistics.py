@@ -14,10 +14,10 @@ from magicgui.widgets import (
     Label,
 )
 
-from tabulour._magicgui import find_current_table, SelectionWidget
-from tabulour._selection_op import SelectionOperator
-from tabulour.exceptions import UnreachableError
-from tabulour.widgets import Table
+from .._magicgui import find_current_table, SelectionWidget
+from .._selection_op import SelectionOperator
+from ..exceptions import UnreachableError
+from ..widgets import Table
 
 
 def result_table(result: NamedTuple) -> Table:

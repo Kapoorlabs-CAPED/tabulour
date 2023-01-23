@@ -11,12 +11,11 @@ from typing import (
 import numpy as np
 from tabulour.exceptions import TableImmutableError
 from ._base import Component, TableComponent
-from tabulour.widgets._registry import SupportActionRegistration
+from ...widgets._registry import SupportActionRegistration
 
-if TYPE_CHECKING:
-    import pandas as pd
-    from tabulour.widgets import TableBase  # noqa: F401
-    from tabulour._qt._table._base._header_view import QDataFrameHeaderView
+import pandas as pd
+from ...widgets import TableBase  # noqa: F401
+from ..._qt._table._base._header_view import QDataFrameHeaderView
 
 
 class HeaderSectionSpan(Component["_HeaderInterface"]):

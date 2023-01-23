@@ -43,12 +43,12 @@ class QTabbedTableStack(QtW.QTabWidget, QActionRegistry[int]):
         from . import _tabbar
 
         if tab_position == "top":
-            self.setTabBar(_tabbar.QtabulourTabBar(self))
+            self.setTabBar(_tabbar.QTabulourTabBar(self))
         elif tab_position == "left":
             self.setTabBar(_tabbar.QLeftSideBar(self))
             self.setTabPosition(QtW.QTabWidget.TabPosition.West)
         elif tab_position == "bottom":
-            self.setTabBar(_tabbar.QtabulourTabBar(self))
+            self.setTabBar(_tabbar.QTabulourTabBar(self))
             self.setTabPosition(QtW.QTabWidget.TabPosition.South)
         elif tab_position == "right":
             self.setTabBar(_tabbar.QRightSideBar(self))

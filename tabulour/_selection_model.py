@@ -3,10 +3,9 @@ from typing import TYPE_CHECKING, Callable, Iterable, Iterator, NamedTuple
 from contextlib import contextmanager
 from psygnal import Signal
 
-from tabulour._range import TableAnchorBase, translate_slice
+from ._range import TableAnchorBase, translate_slice
 
-if TYPE_CHECKING:
-    Range = tuple[slice, slice]
+Range = tuple[slice, slice]
 
 
 class Index(NamedTuple):

@@ -8,17 +8,16 @@ import numpy as np
 import pandas as pd
 
 # NOTE: Axes should be imported here!
-from tabulour.widgets import TableBase
-from tabulour._selection_op import SelectionOperator
-from tabulour._magicgui import Axes
+from ..widgets import TableBase
+from .._selection_op import SelectionOperator
+from .._magicgui import Axes
 
-if TYPE_CHECKING:
-    from matplotlib.artist import Artist
-    from matplotlib.collections import PathCollection, PolyCollection
-    from matplotlib.lines import Line2D
-    from matplotlib.patches import Polygon
-    from matplotlib.container import BarContainer
-    from tabulour._qt._plot import QtMplPlotCanvas
+from matplotlib.artist import Artist
+from matplotlib.collections import PathCollection, PolyCollection
+from matplotlib.lines import Line2D
+from matplotlib.patches import Polygon
+from matplotlib.container import BarContainer
+from .._qt._plot import QtMplPlotCanvas
 
 logger = logging.getLogger(__name__)
 _T = TypeVar("_T", bound="Artist")

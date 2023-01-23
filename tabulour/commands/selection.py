@@ -3,8 +3,7 @@ from typing import TYPE_CHECKING
 from magicgui import widgets as mwdg
 from . import _utils, _dialogs
 
-if TYPE_CHECKING:
-    from tabulour.widgets import TableViewerBase
+from ..widgets import TableViewerBase
 
 
 def copy_data_tab_separated(viewer: TableViewerBase):

@@ -15,6 +15,7 @@ from ._viewer import Toolbar, Console, CommandPalette
 from ._table_subset import TableSeries, TableSubset, TableLocIndexer, TableILocIndexer
 from ._keymap import KeyMap
 
+
 __all__ = [
     "Component",
     "TableComponent",
@@ -40,4 +41,10 @@ __all__ = [
     "Console",
     "CommandPalette",
     "KeyMap",
+    "TableViewerBase", 
+    "TableDisplay", 
+    "TableBase", 
+    "Table", 
+    "TableSignals"
+
 ]

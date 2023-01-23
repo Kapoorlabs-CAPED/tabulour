@@ -11,11 +11,10 @@ from magicgui.widgets import (
     PushButton,
     Widget,
 )
-from tabulour._magicgui import SelectionWidget
-from tabulour.exceptions import UnreachableError
+from .._magicgui import SelectionWidget
+from ..exceptions import UnreachableError
 
-if TYPE_CHECKING:
-    import pandas as pd
+import pandas as pd
 
 
 class _RandomGenerator(Container):

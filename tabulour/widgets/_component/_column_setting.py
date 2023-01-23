@@ -17,30 +17,29 @@ import warnings
 
 import numpy as np
 
-from tabulour.types import ColorMapping, ColorType
-from tabulour.color import InvertedColormap, OpacityColormap, BrightenedColormap
-from tabulour._dtype import get_converter, get_converter_from_type, isna
-from tabulour._colormap import segment_by_float, segment_by_time
+from ...types import ColorMapping, ColorType
+from ...color import InvertedColormap, OpacityColormap, BrightenedColormap
+from ..._dtype import get_converter, get_converter_from_type, isna
+from ..._colormap import segment_by_float, segment_by_time
 from ._base import Component, TableComponent
 
-if TYPE_CHECKING:
-    from pandas.core.dtypes.dtypes import ExtensionDtype
-    from tabulour.widgets._table import TableBase, SpreadSheet  # noqa: F401
+from pandas.core.dtypes.dtypes import ExtensionDtype
+from ...widgets._table import TableBase, SpreadSheet  # noqa: F401
 
-    _DtypeLike = Union[ExtensionDtype, np.dtype]
+_DtypeLike = Union[ExtensionDtype, np.dtype]
 
-    from typing_extensions import TypeGuard, Self
-    import pandas as pd
+from typing_extensions import TypeGuard, Self
+import pandas as pd
 
-    _Formatter = Union[Callable[[Any], str], str, None]
-    _Validator = Callable[[Any], None]
-    _TimeType = Union[pd.Timestamp, pd.Timedelta]
-    _NumberLike = Union[int, float, _TimeType]
-    _Interpolatable = Union[
-        Mapping[_NumberLike, ColorType],
-        Sequence[tuple[_NumberLike, ColorType]],
-        Sequence[ColorType],
-    ]
+_Formatter = Union[Callable[[Any], str], str, None]
+_Validator = Callable[[Any], None]
+_TimeType = Union[pd.Timestamp, pd.Timedelta]
+_NumberLike = Union[int, float, _TimeType]
+_Interpolatable = Union[
+    Mapping[_NumberLike, ColorType],
+    Sequence[tuple[_NumberLike, ColorType]],
+    Sequence[ColorType],
+]
 
 T = TypeVar("T")
 _F = TypeVar("_F", bound=Callable)

@@ -4,8 +4,7 @@ from typing import TYPE_CHECKING, Callable, Any
 import re
 from ._base import Component
 
-if TYPE_CHECKING:
-    from tabulour.widgets._keymap_abc import SupportKeyMap
+from ...widgets._keymap_abc import SupportKeyMap
 
 # e.g. f() takes 0 positional arguments but 1 was given
 _PATTERN = re.compile(r".*takes 0 positional arguments but (\d+) w.+ given")

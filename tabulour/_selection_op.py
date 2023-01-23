@@ -4,11 +4,10 @@ from typing import Hashable, Iterator, TYPE_CHECKING, Literal, Union, SupportsIn
 from functools import singledispatch
 import re
 
-from tabulour.exceptions import UnreachableError
+from .exceptions import UnreachableError
 
-if TYPE_CHECKING:
-    import pandas as pd
-    from typing_extensions import Self
+import pandas as pd
+from typing_extensions import Self
 
 _Slice = Union[int, slice]
 

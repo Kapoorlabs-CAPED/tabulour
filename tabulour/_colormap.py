@@ -5,12 +5,13 @@ from tabulour.color import ColorTuple, normalize_color
 from tabulour.types import ColorType
 from tabulour._dtype import isna, get_converter
 
-if TYPE_CHECKING:
-    from pandas.core.dtypes.dtypes import CategoricalDtype
-    import pandas as pd
+from pandas.core.dtypes.dtypes import CategoricalDtype
+import pandas as pd
+from ._qt._color_edit import ColorEdit
+from magicgui.widgets import Dialog, LineEdit, Container
 
-    _TimeLike = Union[pd.Timestamp, pd.Timedelta]
-    _ColorType = tuple[int, int, int, int]
+_TimeLike = Union[pd.Timestamp, pd.Timedelta]
+_ColorType = tuple[int, int, int, int]
 
 _DEFAULT_MIN = "#697FD1"
 _DEFAULT_MAX = "#FF696B"
@@ -18,9 +19,7 @@ _DEFAULT_MAX = "#FF696B"
 
 def exec_colormap_dialog(ds: pd.Series, parent=None):
     """Open a dialog to define a colormap for a series."""
-    from tabulour._qt._color_edit import ColorEdit
-    from magicgui.widgets import Dialog, LineEdit, Container
-
+   
     dtype = ds.dtype
     if dtype == "category":
         dtype: CategoricalDtype

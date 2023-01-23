@@ -9,10 +9,9 @@ from typing import (
     Any,
 )
 
-if TYPE_CHECKING:
-    from typing_extensions import Self
-    from tabulour.widgets._table import TableBase, SpreadSheet  # noqa: F401
-    from tabulour.widgets._mainwindow import TableViewerBase  # noqa: F401
+from typing_extensions import Self
+from ...widgets._table import TableBase, SpreadSheet  # noqa: F401
+from ...widgets._mainwindow import TableViewerBase  # noqa: F401
 
 T = TypeVar("T")
 

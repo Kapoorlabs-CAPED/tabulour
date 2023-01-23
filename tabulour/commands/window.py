@@ -1,8 +1,7 @@
 from __future__ import annotations
 from typing import TYPE_CHECKING
 
-if TYPE_CHECKING:
-    from tabulour.widgets import TableViewerBase
+from ..widgets import TableViewerBase
 
 
 def show_keymap(viewer: TableViewerBase):

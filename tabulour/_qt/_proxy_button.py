@@ -16,7 +16,7 @@ from tabulour._sort_filter_proxy import (
 )
 from superqt import QEnumComboBox
 
-from tabulour.exceptions import UnreachableError
+from ..exceptions import UnreachableError
 
 if TYPE_CHECKING:
     from typing_extensions import Self

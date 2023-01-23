@@ -9,11 +9,11 @@ from qtpy.QtCore import Signal
 from qtpy import QtWidgets as QtW, QtCore, QtGui
 from qtconsole.rich_jupyter_widget import RichJupyterWidget
 
-from tabulour._keymap import QtKeys, QtKeyMap
+from .._keymap import QtKeys, QtKeyMap
 
 if TYPE_CHECKING:
-    from tabulour._qt._dockwidget import QtDockWidget
-    from tabulour.widgets._mainwindow import TableViewerBase
+    from .._qt._dockwidget import QtDockWidget
+    from ..widgets._mainwindow import TableViewerBase
 
     class RichJupyterWidget(RichJupyterWidget, QtW.QWidget):
         """To fix typing problem"""

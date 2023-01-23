@@ -2,10 +2,7 @@ from __future__ import annotations
 
 from typing import Hashable, TYPE_CHECKING, NamedTuple
 from . import _dialogs
-
-
-if TYPE_CHECKING:
-    from tabulour.widgets import TableBase, TableViewerBase
+from ..widgets import TableBase, TableViewerBase
 
 
 def plot(viewer: TableViewerBase):

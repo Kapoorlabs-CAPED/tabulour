@@ -14,11 +14,9 @@ import numpy as np
 import pandas as pd
 from qtpy import QtWidgets as QtW, QtCore
 from qtpy.QtCore import Qt
+from pandas.core.dtypes.dtypes import ExtensionDtype
 
-if TYPE_CHECKING:
-    from pandas.core.dtypes.dtypes import ExtensionDtype
-
-    _DTypeLike = Union[np.dtype, ExtensionDtype]
+_DTypeLike = Union[np.dtype, ExtensionDtype]
 
 _NAN_STRINGS = frozenset({"", "nan", "na", "n/a", "<na>", "NaN", "NA", "N/A", "<NA>"})
 

@@ -16,16 +16,13 @@ from typing import (
 from enum import Enum
 
 import numpy as np
-from numpy.typing import ArrayLike, NDArray
+from numpy.typing import ArrayLike,NDArray
 
-if TYPE_CHECKING:
-    import pandas as pd
+import pandas as pd
 
-    _TableLike = Union[pd.DataFrame, dict, Iterable, ArrayLike]
-    from .widgets._component import SelectionRanges
-else:
-    _TableLike = Any
-    SelectionRanges = MutableSequence[Tuple[slice, slice]]
+_TableLike = Union[pd.DataFrame, dict, Iterable, ArrayLike]
+from .widgets._component import SelectionRanges
+
 
 
 __all__ = [

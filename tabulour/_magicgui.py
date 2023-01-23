@@ -17,7 +17,7 @@ from magicgui.widgets import (
 )
 from magicgui.backends._qtpy.widgets import QBaseWidget
 
-from tabulour.widgets import (
+from .widgets import (
     TableViewerBase,
     TableBase,
     Table,
@@ -25,28 +25,26 @@ from tabulour.widgets import (
     TableViewerWidget,
     MagicTable,
 )
-from tabulour.types import (
+from .types import (
     TableColumn,
     TableData,
     TableDataTuple,
     TableInfoInstance,
     TabPosition,
 )
-from tabulour._selection_op import (
+from ._selection_op import (
     SelectionOperator,
     ILocSelOp,
     parse,
     construct,
 )
 
-from tabulour._timedelta import TimeDeltaEdit
+from ._timedelta import TimeDeltaEdit
 
-if TYPE_CHECKING:
-    import pandas as pd
-    from magicgui.widgets import FunctionGui
-    from matplotlib.axes import Axes
-else:
-    Axes = Any
+import pandas as pd
+from magicgui.widgets import FunctionGui
+from matplotlib.axes import Axes
+
 
 
 # #############################################################################

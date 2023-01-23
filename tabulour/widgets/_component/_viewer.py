@@ -2,8 +2,7 @@ from __future__ import annotations
 from typing import Callable, Any, TYPE_CHECKING
 from ._base import ViewerComponent
 
-if TYPE_CHECKING:
-    from tabulour.widgets import TableViewerBase
+from ...widgets import TableViewerBase
 
 
 class Toolbar(ViewerComponent):

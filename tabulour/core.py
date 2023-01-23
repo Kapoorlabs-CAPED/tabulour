@@ -1,10 +1,9 @@
 from __future__ import annotations
 from pathlib import Path
 from typing import TYPE_CHECKING
-from tabulour.widgets import TableViewer
+from .widgets import TableViewer
 
-if TYPE_CHECKING:
-    from .widgets._mainwindow import TableViewerBase
+from .widgets._mainwindow import TableViewerBase
 
 CURRENT_VIEWER: TableViewerBase | None = None
 

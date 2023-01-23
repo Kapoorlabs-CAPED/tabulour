@@ -40,17 +40,16 @@ logger = logging.getLogger(__name__)
 _P = ParamSpec("_P")
 _R = TypeVar("_R")
 
-if TYPE_CHECKING:
-    from tabulour.widgets._table import _DataFrameTableLayer
-    import pandas as pd
+from tabulour.widgets._table import _DataFrameTableLayer
+import pandas as pd
 
-    MethodRef = tuple[weakref.ReferenceType[object], str, Union[Callable, None]]
-    NormedCallback = Union[MethodRef, Callable]
-    StoredSlot = tuple[NormedCallback, Union[int, None]]
-    ReducerFunc = Callable[[tuple, tuple], tuple]
+MethodRef = tuple[weakref.ReferenceType[object], str, Union[Callable, None]]
+NormedCallback = Union[MethodRef, Callable]
+StoredSlot = tuple[NormedCallback, Union[int, None]]
+ReducerFunc = Callable[[tuple, tuple], tuple]
 
-    Slice1D = Union[SupportsIndex, slice]
-    Slice2D = tuple[Slice1D, Slice1D]
+Slice1D = Union[SupportsIndex, slice]
+Slice2D = tuple[Slice1D, Slice1D]
 
 
 class RangedSlot(Generic[_P, _R], TableAnchorBase):

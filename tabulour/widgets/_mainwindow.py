@@ -15,21 +15,23 @@ from ._sample import open_sample
 from ._component import Toolbar, Console, CommandPalette
 from . import _doc
 
-from tabulour import _utils, _io
-from tabulour.types import SelectionType, TabPosition, _TableLike, _SingleSelection
-from tabulour.exceptions import UnreachableError
-from tabulour.widgets._keymap_abc import SupportKeyMap
+from .. import _utils, _io
+from ..types import SelectionType, TabPosition, _TableLike, _SingleSelection
+from ..exceptions import UnreachableError
+from ..widgets._keymap_abc import SupportKeyMap
 
-if TYPE_CHECKING:
-    from tabulour.widgets._table import TableBase
-    from tabulour._qt import QMainWindow, QMainWidget
-    from tabulour._qt._dockwidget import QtDockWidget
-    from tabulour._qt._mainwindow import _QtMainWidgetBase
-    from tabulour._qt._mainwindow._namespace import Namespace
-    from qtpy.QtWidgets import QWidget
-    from magicgui.widgets import Widget
-    import numpy as np
-    import pandas as pd
+from ..widgets._table import TableBase
+from .._qt import QMainWindow, QMainWidget
+from .._qt._dockwidget import QtDockWidget
+from .._qt._mainwindow import _QtMainWidgetBase
+from .._qt._mainwindow._namespace import Namespace
+from qtpy.QtWidgets import QWidget
+from magicgui.widgets import Widget
+import numpy as np
+import pandas as pd
+from .._qt import get_app
+from .._utils import get_post_initializers
+
 
 PathLike = Union[str, Path, bytes]
 
@@ -112,9 +114,7 @@ class TableViewerBase(_AbstractViewer, SupportKeyMap):
         tab_position: TabPosition | str = TabPosition.top,
         show: bool = True,
     ):
-        from tabulour._qt import get_app
-        from tabulour._utils import get_post_initializers
-
+        
         app = get_app()  # noqa: F841
         self._qwidget = self._qwidget_class(tab_position=tab_position)
         self._qwidget._table_viewer = self
@@ -181,7 +181,7 @@ class TableViewerBase(_AbstractViewer, SupportKeyMap):
         """Show the widget."""
         self._qwidget.show()
         if run:
-            from tabulour._qt._app import run_app
+            from .._qt._app import run_app
 
             run_app()
         return None
@@ -375,7 +375,7 @@ class TableViewerBase(_AbstractViewer, SupportKeyMap):
             paths = [path.replace("*", table.name) for table in self.tables]
         elif path.suffix in (".xlsx", ".xls"):
             import pandas as pd
-            from tabulour._pd_index import is_ranged
+            from .._pd_index import is_ranged
 
             with pd.ExcelWriter(path, mode="w") as writer:
                 for table in self.tables:
@@ -519,7 +519,7 @@ class TableViewerWidget(TableViewerBase):
 
     @property
     def _qwidget_class(self) -> QMainWidget:
-        from tabulour._qt import QMainWidget
+        from .._qt import QMainWidget
 
         return QMainWidget
 
@@ -544,7 +544,7 @@ class TableViewer(TableViewerBase):
 
     @property
     def _qwidget_class(self) -> QMainWindow:
-        from tabulour._qt import QMainWindow
+        from .._qt import QMainWindow
 
         return QMainWindow
 
@@ -630,8 +630,8 @@ class DummyViewer(_AbstractViewer):
         """Return the namespace of the cell editor."""
         cls = self.__class__
         if cls._namespace is None:
-            from tabulour._qt._mainwindow._namespace import Namespace
-            from tabulour._utils import load_cell_namespace
+            from .._qt._mainwindow._namespace import Namespace
+            from .._utils import load_cell_namespace
 
             cls._namespace = Namespace()
 

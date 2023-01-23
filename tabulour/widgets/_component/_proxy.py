@@ -16,9 +16,8 @@ from tabulour.types import ProxyType, _IntArray, _BoolArray, _IntOrBoolArray
 from ._base import TableComponent
 from tabulour._sort_filter_proxy import ComposableFilter, ComposableSorter
 
-if TYPE_CHECKING:
-    import pandas as pd
-    from tabulour.widgets._table import TableBase
+import pandas as pd
+from tabulour.widgets._table import TableBase
 
 
 class ProxyInterface(TableComponent):

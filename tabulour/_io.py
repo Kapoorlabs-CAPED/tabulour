@@ -3,8 +3,7 @@ from __future__ import annotations
 from typing import Union, TYPE_CHECKING
 from pathlib import Path
 
-if TYPE_CHECKING:
-    import pandas as pd
+import pandas as pd
 
 PathLike = Union[str, Path, bytes]
 

@@ -14,16 +14,15 @@ from qtpy import QtGui
 from qtpy.QtCore import Qt
 from magicgui.widgets import Widget
 
-from tabulour.exceptions import TableImmutableError
-from tabulour.types import EvalInfo
-from tabulour.color import ColorTuple
-from tabulour._psygnal import InCellRangedSlot
+from ...exceptions import TableImmutableError
+from ...types import EvalInfo
+from ...color import ColorTuple
+from ..._psygnal import InCellRangedSlot
 from ._base import TableComponent
-from tabulour.widgets._registry import SupportActionRegistration
+from ...widgets._registry import SupportActionRegistration
 
-if TYPE_CHECKING:
-    import pandas as pd
-    from tabulour.widgets import TableBase  # noqa: F401
+import pandas as pd
+from ...widgets import TableBase  # noqa: F401
 
 
 class _Sequence2D(TableComponent):

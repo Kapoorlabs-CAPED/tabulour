@@ -13,11 +13,10 @@ from typing import (
 from psygnal import Signal
 import logging
 import weakref
-from tabulour._range import TableAnchorBase
-from tabulour._psygnal import InCellRangedSlot
+from ._range import TableAnchorBase
+from ._psygnal import InCellRangedSlot
 
-if TYPE_CHECKING:
-    from tabulour.widgets import TableBase
+from .widgets import TableBase
 
 
 class Index(NamedTuple):

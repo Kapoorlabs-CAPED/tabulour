@@ -11,9 +11,8 @@ from typing import (
     Literal,
 )
 
-if TYPE_CHECKING:
-    from tabulour.widgets import TableViewerBase, TableBase
-    from typing_extensions import Self
+from .widgets import TableViewerBase, TableBase
+from typing_extensions import Self
 
 _T = TypeVar("_T")
 

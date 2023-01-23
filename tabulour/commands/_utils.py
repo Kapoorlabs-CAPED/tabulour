@@ -2,8 +2,7 @@ from __future__ import annotations
 
 from typing import TYPE_CHECKING
 
-if TYPE_CHECKING:
-    from tabulour.widgets import TableBase, TableViewerBase, Table, SpreadSheet
+from ..widgets import TableBase, TableViewerBase, Table, SpreadSheet
 
 __void = object()
 

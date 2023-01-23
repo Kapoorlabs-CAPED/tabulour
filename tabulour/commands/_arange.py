@@ -12,18 +12,17 @@ from magicgui.widgets import (
     LineEdit,
     ComboBox,
 )
-from tabulour._magicgui import SelectionWidget, TimeDeltaEdit
+from .._magicgui import SelectionWidget, TimeDeltaEdit
 
 import pandas as pd
 
-if TYPE_CHECKING:
-    from magicgui.widgets.bases import ValueWidget
+
 
 
 class _CheckedWidget(Container):
     check_changed = Signal(bool)
 
-    def __init__(self, widget: ValueWidget, checked: bool = True, **kwargs):
+    def __init__(self, widget, checked: bool = True, **kwargs):
         self._cbox = CheckBox(value=checked)
         self._cbox.max_width = 28
         self._child_widget = widget

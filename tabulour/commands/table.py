@@ -2,9 +2,8 @@ from __future__ import annotations
 from typing import TYPE_CHECKING
 from . import _dialogs, _utils
 
-if TYPE_CHECKING:
-    from tabulour.widgets import TableViewerBase, TableBase, SpreadSheet
-    from ._arange import _RangeDialog
+from ..widgets import TableViewerBase, TableBase, SpreadSheet
+from ._arange import _RangeDialog
 
 
 def new_spreadsheet(viewer: TableViewerBase):

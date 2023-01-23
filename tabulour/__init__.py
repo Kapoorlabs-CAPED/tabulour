@@ -1,7 +1,7 @@
 __version__ = "0.0.1"
 
-from tabulour.widgets import TableViewer, TableViewerWidget
-from tabulour.core import (
+from .widgets import TableViewer, TableViewerWidget
+from .core import (
     current_viewer,
     read_csv,
     read_excel,
@@ -9,7 +9,7 @@ from tabulour.core import (
     view_spreadsheet,
     open_sample,
 )
-from tabulour._magicgui import MagicTableViewer
+from ._magicgui import MagicTableViewer
 
 __all__ = [
     "TableViewer",

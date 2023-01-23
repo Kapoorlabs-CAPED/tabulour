@@ -4,8 +4,7 @@ import re
 from typing import Any, TYPE_CHECKING, Callable, overload, TypeVar, Generic
 from typing_extensions import ParamSpec
 
-if TYPE_CHECKING:
-    from tabulour._qt._action_registry import QActionRegistry
+from .._qt._action_registry import QActionRegistry
 
 _S = TypeVar("_S")
 _T = TypeVar("_T")

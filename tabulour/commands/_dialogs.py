@@ -7,14 +7,13 @@ import ast
 import numpy as np
 
 # NOTE: Axes should be imported here!
-from tabulour.widgets import TableBase, TableViewerBase
-from tabulour.types import TableData
-from tabulour.exceptions import SelectionRangeError
-from tabulour._selection_op import SelectionOperator
-from tabulour._magicgui import dialog_factory, dialog_factory_mpl, Axes
+from ..widgets import TableBase, TableViewerBase
+from ..types import TableData
+from ..exceptions import SelectionRangeError
+from .._selection_op import SelectionOperator
+from .._magicgui import dialog_factory, dialog_factory_mpl, Axes
 
-if TYPE_CHECKING:
-    import pandas as pd
+import pandas as pd
 
 logger = logging.getLogger(__name__)
 

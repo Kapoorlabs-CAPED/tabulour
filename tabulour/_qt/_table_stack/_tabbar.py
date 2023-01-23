@@ -5,7 +5,7 @@ from qtpy.QtCore import Qt
 # https://stackoverflow.com/questions/50578661/how-to-implement-vertical-tabs-in-qt
 
 
-class QTabulousTabBar(QtW.QTabBar):
+class QTabulourTabBar(QtW.QTabBar):
     def __init__(self, parent: QtW.QWidget | None = None) -> None:
         super().__init__(parent)
         self.setMouseTracking(True)
@@ -14,7 +14,7 @@ class QTabulousTabBar(QtW.QTabBar):
         self.setContextMenuPolicy(Qt.ContextMenuPolicy.CustomContextMenu)
 
 
-class _QSideBar(QTabulousTabBar):
+class _QSideBar(QTabulourTabBar):
     _ROTATION_DEGREE: int
 
     def tabSizeHint(self, index: int) -> QtCore.QSize:

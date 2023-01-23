@@ -14,8 +14,7 @@ from typing import (
 from tabulour.types import _SingleSelection, SelectionType
 from ._base import TableComponent
 
-if TYPE_CHECKING:
-    import pandas as pd
+import pandas as pd
 
 
 T = TypeVar("T")

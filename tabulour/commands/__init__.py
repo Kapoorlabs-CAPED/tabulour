@@ -6,9 +6,8 @@ from . import file, plot, column, selection, tab, table, view, analysis, window
 from types import FunctionType, ModuleType
 from qt_command_palette import get_palette
 
-if TYPE_CHECKING:
-    from tabulour._qt._mainwindow import _QtMainWidgetBase
-    from tabulour.widgets import TableViewerBase
+from .._qt._mainwindow import _QtMainWidgetBase
+from ..widgets import TableViewerBase
 
 _SUB_MODULES: list[ModuleType] = [
     file,

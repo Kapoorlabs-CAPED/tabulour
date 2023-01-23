@@ -6,12 +6,11 @@ from typing import TYPE_CHECKING, Any, Callable, NamedTuple, overload
 import numpy as np
 from enum import Enum
 from functools import reduce
-from tabulour.types import ProxyType, _IntArray, _IntOrBoolArray
-from tabulour.exceptions import TableNotOrderedError
+from .types import ProxyType, _IntArray, _IntOrBoolArray
+from .exceptions import TableNotOrderedError
 
-if TYPE_CHECKING:
-    import pandas as pd
-    from typing_extensions import Self
+import pandas as pd
+from typing_extensions import Self
 
 
 class ProxyTypes(Enum):

@@ -8,19 +8,18 @@ from tabulour.types import ColorMapping
 from ._base import TableComponent
 from ._column_setting import _Void
 
-if TYPE_CHECKING:
-    from numpy.typing import NDArray
-    import pandas as pd
-    from tabulour.widgets import TableBase
-    from ._column_setting import (
-        _Interpolatable,
-        _ColormapInterface,
-        _DictPropertyInterface,
-    )
+from numpy.typing import NDArray
+import pandas as pd
+from ...widgets import TableBase
+from ._column_setting import (
+    _Interpolatable,
+    _ColormapInterface,
+    _DictPropertyInterface,
+)
 
-    _RowLocIdx = Union[int, str, slice, list[str], list[int]]
-    _ColumnLocIdx = Union[str, slice, list[str]]
-    _ILocIdx = Union[slice, list[int], NDArray[np.integer]]
+_RowLocIdx = Union[int, str, slice, list[str], list[int]]
+_ColumnLocIdx = Union[str, slice, list[str]]
+_ILocIdx = Union[slice, list[int], NDArray[np.integer]]
 
 
 class TableLocIndexer(TableComponent):
