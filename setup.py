@@ -1,8 +1,8 @@
 from setuptools import setup, find_packages
 
-TABULOUS = "tabulous"
+TABULOUR = "tabulour"
 
-with open(f"{TABULOUS}/__init__.py", encoding="utf-8") as f:
+with open(f"{TABULOUR}/__init__.py", encoding="utf-8") as f:
     line = next(iter(f))
     VERSION = line.strip().split()[-1][1:-1]
 
@@ -10,17 +10,17 @@ with open("README.md") as f:
     README = f.read()
 
 setup(
-    name=TABULOUS,
+    name=TABULOUR,
     version=VERSION,
     description="A table data viewer for Python",
     long_description=README,
     long_description_content_type="text/markdown",
-    author="Hanjin Liu",
-    author_email="liuhanjin-sc@g.ecc.u-tokyo.ac.jp",
+    author="Varun Kapoor, Hanjin Liu",
+    author_email="varun.kapoor@kapoorlabs.org",
     license="BSD 3-Clause",
-    download_url="https://github.com/hanjinliu/tabulous",
+    download_url="https://github.com/Kapoorlabs-CAPED/TABULOUR",
     packages=find_packages(exclude=["docs", "examples", "rst", "tests", "tests.*"]),
-    package_data={TABULOUS: ["**/*.pyi", "*.pyi", "**/*.svg", "**/*.png", "**/*.qss"]},
+    package_data={TABULOUR: ["**/*.pyi", "*.pyi", "**/*.svg", "**/*.png", "**/*.qss"]},
     include_package_data=True,
     install_requires=[
         "magicgui>=0.5.1",
@@ -47,7 +47,7 @@ setup(
         "scikit-learn": ["scikit-learn>=1.0"],
     },
     entry_points={
-        "console_scripts": [f"{TABULOUS}={TABULOUS}.__main__:main"],
+        "console_scripts": [f"{TABULOUR}={TABULOUR}.__main__:main"],
     },
     python_requires=">=3.8",
 )
