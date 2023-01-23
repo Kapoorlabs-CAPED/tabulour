@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from typing import TYPE_CHECKING, Any, Hashable
+from typing import  Any, Hashable
 import re
 from io import StringIO
 import warnings
@@ -19,8 +19,7 @@ from tabulour.types import ItemInfo
 from tabulour._text_formatter import DefaultFormatter
 from tabulour._pd_index import char_range_index, is_ranged, char_arange
 
-if TYPE_CHECKING:
-    from magicgui.widgets._bases import ValueWidget
+from magicgui.widgets._bases import ValueWidget
 
 # More rows/columns will be displayed
 _OUT_OF_BOUND_R = 60

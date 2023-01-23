@@ -1,5 +1,4 @@
 from __future__ import annotations
-from typing import TYPE_CHECKING
 from pathlib import Path
 import weakref
 from qtpy import QtWidgets as QtW, QtGui
@@ -10,10 +9,9 @@ from tabulour._keymap import QtKeyMap
 from tabulour.types import TabPosition
 from tabulour._utils import get_config
 
-if TYPE_CHECKING:
-    from tabulour.widgets import TableViewer
-    from tabulour._qt._table_stack import QTabbedTableStack
-    from tabulour._qt._dockwidget import QtDockWidget
+from tabulour.widgets import TableViewer
+from tabulour._qt._table_stack import QTabbedTableStack
+from tabulour._qt._dockwidget import QtDockWidget
 
 ICON_DIR = Path(__file__).parent.parent / "_icons"
 STYLE_DIR = Path(__file__).parent.parent

@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from abc import abstractmethod
 import ast
-from typing import TYPE_CHECKING, Any, Callable, NamedTuple, overload
+from typing import Any, Callable, NamedTuple, overload
 import numpy as np
 from enum import Enum
 from functools import reduce

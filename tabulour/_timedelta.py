@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 import datetime
-from typing import TYPE_CHECKING, Union
+from typing import  Union
 from qtpy import QtWidgets as QtW, QtCore, QtGui
 from qtpy.QtCore import Signal
 
@@ -42,9 +42,8 @@ class QTimeDeltaEdit(QtW.QAbstractSpinBox):
         self.lineEdit().sectionChanged.connect(self._on_section_changed)
         self.setMinimumHeight(20)
 
-    if TYPE_CHECKING:
 
-        def lineEdit(self) -> _QTimeDeltaLineEdit:
+    def lineEdit(self) -> _QTimeDeltaLineEdit:
             ...
 
     def value(self) -> datetime.timedelta:

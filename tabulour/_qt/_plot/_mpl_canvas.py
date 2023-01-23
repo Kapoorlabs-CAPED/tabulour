@@ -1,5 +1,4 @@
 from __future__ import annotations
-from typing import TYPE_CHECKING
 import numpy as np
 from matplotlib.backends.backend_qt5agg import FigureCanvas
 from matplotlib.backend_bases import MouseEvent, MouseButton
@@ -7,10 +6,9 @@ from matplotlib.backend_bases import MouseEvent, MouseButton
 from qtpy import QtWidgets as QtW, QtGui
 from qtpy.QtCore import Signal
 
-if TYPE_CHECKING:
-    from matplotlib.figure import Figure
-    from matplotlib.axes import Axes
-    from matplotlib.legend import Legend
+from matplotlib.figure import Figure
+from matplotlib.axes import Axes
+from matplotlib.legend import Legend
 
 
 class InteractiveFigureCanvas(FigureCanvas):

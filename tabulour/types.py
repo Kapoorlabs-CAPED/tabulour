@@ -7,7 +7,6 @@ from typing import (
     Tuple,
     List,
     Union,
-    TYPE_CHECKING,
     NamedTuple,
     SupportsIndex,
     Mapping,
@@ -36,13 +35,8 @@ __all__ = [
     "SelectionType",
 ]
 
-if TYPE_CHECKING:
-    TableData = NewType("TableData", pd.DataFrame)
-    TableColumn = NewType("TableColumn", pd.Series)
-else:
-    TableData = NewType("TableData", Any)
-    TableColumn = NewType("TableColumn", Any)
-
+TableData = NewType("TableData", pd.DataFrame)
+TableColumn = NewType("TableColumn", pd.Series)
 TableDataTuple = NewType("TableDataTuple", tuple)
 
 

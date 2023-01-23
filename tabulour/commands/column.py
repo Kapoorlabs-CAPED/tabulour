@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import TYPE_CHECKING
-from tabulour.exceptions import SelectionRangeError
+from ..exceptions import SelectionRangeError
 from . import _utils, _dialogs
 
 from ..widgets import TableViewerBase

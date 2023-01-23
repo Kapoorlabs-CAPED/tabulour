@@ -4,7 +4,7 @@ import logging
 from abc import abstractmethod, abstractstaticmethod
 from enum import Enum
 from pathlib import Path
-from typing import Any, Callable, Hashable, TYPE_CHECKING, overload
+from typing import Any, Callable, Hashable, overload
 import warnings
 from psygnal import SignalGroup, Signal
 

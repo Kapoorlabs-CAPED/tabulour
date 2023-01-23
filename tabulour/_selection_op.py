@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from typing import Hashable, Iterator, TYPE_CHECKING, Literal, Union, SupportsIndex
+from typing import Hashable, Iterator,  Literal, Union, SupportsIndex
 from functools import singledispatch
 import re
 

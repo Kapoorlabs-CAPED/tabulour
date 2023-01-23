@@ -1,20 +1,19 @@
 from __future__ import annotations
-from typing import Literal, TYPE_CHECKING, cast
+from typing import Literal, cast
 import weakref
 from qtpy import QtWidgets as QtW, QtGui, QtCore
 from qtpy.QtCore import Qt, Signal
 
-from tabulour._qt._table_stack._start import QStartupWidget
-from tabulour._qt._table_stack._utils import create_temporal_line_edit
+from ..._qt._table_stack._start import QStartupWidget
+from ..._qt._table_stack._utils import create_temporal_line_edit
 
-from tabulour._qt._table._base._table_group import QTableGroup
-from tabulour._qt._clickable_label import QClickableLabel
-from tabulour._qt._action_registry import QActionRegistry
+from ..._qt._table._base._table_group import QTableGroup
+from ..._qt._clickable_label import QClickableLabel
+from ..._qt._action_registry import QActionRegistry
 
-if TYPE_CHECKING:
-    from tabulour._qt._table import QBaseTable, QMutableTable
-    from tabulour._qt._mainwindow._base import _QtMainWidgetBase
-    from tabulour._qt._table_stack._overlay import QOverlayWidget
+from ..._qt._table import QBaseTable, QMutableTable
+from ..._qt._mainwindow._base import _QtMainWidgetBase
+from ..._qt._table_stack._overlay import QOverlayWidget
 
 
 class QTabbedTableStack(QtW.QTabWidget, QActionRegistry[int]):

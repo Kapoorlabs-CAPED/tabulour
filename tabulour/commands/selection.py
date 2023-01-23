@@ -1,5 +1,4 @@
 from __future__ import annotations
-from typing import TYPE_CHECKING
 from magicgui import widgets as mwdg
 from . import _utils, _dialogs
 

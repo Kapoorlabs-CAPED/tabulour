@@ -2,7 +2,6 @@ from __future__ import annotations
 from abc import abstractmethod
 from typing import (
     Hashable,
-    TYPE_CHECKING,
     TypeVar,
     Any,
     Union,

@@ -1,10 +1,8 @@
 from __future__ import annotations
 
-from typing import TYPE_CHECKING
 from . import _utils
 
-if TYPE_CHECKING:
-    from tabulour.widgets import TableViewerBase
+from ..widgets import TableViewerBase
 
 
 def set_popup_mode(viewer: TableViewerBase):

@@ -4,7 +4,7 @@ import pandas as pd
 from collections_undo import arguments
 
 from ._base import QMutableSimpleTable, DataFrameModel
-from tabulour._dtype import get_converter
+from ..._dtype import get_converter
 
 
 class QTableLayer(QMutableSimpleTable):

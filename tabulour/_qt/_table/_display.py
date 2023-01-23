@@ -1,11 +1,10 @@
 from __future__ import annotations
-from typing import TYPE_CHECKING, Callable
+from typing import  Callable
 from qtpy import QtWidgets as QtW
 from qtpy.QtCore import Qt, QTimer, Signal
 from ._base import QBaseTable, _QTableViewEnhanced, DataFrameModel
 
-if TYPE_CHECKING:
-    import pandas as pd
+import pandas as pd
 
 
 def _get_standard_icon(x):

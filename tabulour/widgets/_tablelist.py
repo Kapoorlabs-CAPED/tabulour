@@ -1,6 +1,6 @@
 from __future__ import annotations
 import re
-from typing import Any, TYPE_CHECKING
+from typing import Any
 from psygnal import Signal, SignalGroup, SignalInstance
 from psygnal.containers import EventedList
 from .. import commands as cmds

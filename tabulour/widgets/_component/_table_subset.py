@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from typing import TYPE_CHECKING, Sequence, TypeVar, Union, overload, Callable
+from typing import  Sequence, TypeVar, Union, overload, Callable
 
 import numpy as np
 

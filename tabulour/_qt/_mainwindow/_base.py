@@ -1,5 +1,5 @@
 from __future__ import annotations
-from typing import TYPE_CHECKING, Any
+from typing import Any
 import qtpy
 from qtpy import QtWidgets as QtW, QtGui, QtCore
 from qtpy.QtCore import QEvent, Signal
@@ -7,16 +7,15 @@ from qt_command_palette import get_palette
 
 from ._namespace import Namespace
 
-from tabulour._qt._table_stack import QTabbedTableStack
-from tabulour._qt._history import QtFileHistoryManager
-from tabulour._keymap import QtKeyMap
-from tabulour.types import TabPosition
-from tabulour._utils import load_cell_namespace
+from ..._qt._table_stack import QTabbedTableStack
+from ..._qt._history import QtFileHistoryManager
+from ..._keymap import QtKeyMap
+from ...types import TabPosition
+from ..._utils import load_cell_namespace
 
-if TYPE_CHECKING:
-    from tabulour._qt._toolbar import QTableStackToolBar
-    from tabulour._qt._console import QtConsole
-    from tabulour.widgets import TableViewer
+from ..._qt._toolbar import QTableStackToolBar
+from ..._qt._console import QtConsole
+from ...widgets import TableViewer
 
 
 class _EventFilter(QtCore.QObject):

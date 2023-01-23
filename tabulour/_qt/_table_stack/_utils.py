@@ -1,12 +1,11 @@
 from __future__ import annotations
 import re
-from typing import TYPE_CHECKING, Literal, cast, overload
+from typing import  Literal, cast, overload
 from qtpy import QtWidgets as QtW, QtCore, QtGui
 from qtpy.QtCore import Signal, Qt
 
-if TYPE_CHECKING:
-    from .._mainwindow import _QtMainWidgetBase
-    from tabulour.widgets import TableBase, Table, SpreadSheet
+from .._mainwindow import _QtMainWidgetBase
+from ...widgets import TableBase, Table, SpreadSheet
 
 
 def create_temporal_line_edit(

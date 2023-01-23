@@ -6,7 +6,6 @@ from typing import (
     Generic,
     Hashable,
     TypeVar,
-    TYPE_CHECKING,
     overload,
     Literal,
 )

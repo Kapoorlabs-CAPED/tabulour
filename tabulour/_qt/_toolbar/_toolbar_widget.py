@@ -1,20 +1,19 @@
 from __future__ import annotations
 from pathlib import Path
-from typing import Callable, TYPE_CHECKING, Union
+from typing import Callable,  Union
 from functools import partial
 import weakref
 from qtpy import QtWidgets as QtW, QtCore
 from qtpy.QtWidgets import QAction
 
-from tabulour._qt._svg import QColoredSVGIcon
-from tabulour._qt._multitips import QHasToolTip
-from tabulour import commands as cmds
+from ..._qt._svg import QColoredSVGIcon
+from ..._qt._multitips import QHasToolTip
+from ... import commands as cmds
 
 from ._toolbutton import QColoredToolButton, QMoreToolButton
 
-if TYPE_CHECKING:
-    from tabulour._qt._mainwindow import _QtMainWidgetBase
-    from tabulour.widgets._mainwindow import TableViewerBase
+from ..._qt._mainwindow import _QtMainWidgetBase
+from ...widgets._mainwindow import TableViewerBase
 
 ICON_DIR = Path(__file__).parent.parent / "_icons"
 

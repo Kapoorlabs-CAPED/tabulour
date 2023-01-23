@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 import re
-from typing import Any, TYPE_CHECKING, Callable, overload, TypeVar, Generic
+from typing import Any,  Callable, overload, TypeVar, Generic
 from typing_extensions import ParamSpec
 
 from .._qt._action_registry import QActionRegistry

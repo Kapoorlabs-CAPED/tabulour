@@ -1,7 +1,6 @@
 from __future__ import annotations
 
 from abc import ABC
-from typing import TYPE_CHECKING
 from ._component import KeyMap
 
 from .._qt._mainwindow import _QtMainWidgetBase

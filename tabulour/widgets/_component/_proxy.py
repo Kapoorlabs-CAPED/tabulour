@@ -4,7 +4,6 @@ from functools import wraps
 import ast
 from contextlib import contextmanager
 from typing import (
-    TYPE_CHECKING,
     Sequence,
     overload,
     Any,

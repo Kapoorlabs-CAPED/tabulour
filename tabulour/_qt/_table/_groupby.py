@@ -1,5 +1,5 @@
 from __future__ import annotations
-from typing import Any, Hashable, Iterable, Sequence, TYPE_CHECKING
+from typing import Any, Hashable, Iterable, Sequence
 from pandas.core.groupby.generic import DataFrameGroupBy
 from qtpy import QtWidgets as QtW, QtGui
 from qtpy.QtCore import Signal, Qt
@@ -7,8 +7,7 @@ from collections_undo import arguments
 
 from ._base import QBaseTable, _QTableViewEnhanced, DataFrameModel
 
-if TYPE_CHECKING:
-    import pandas as pd
+import pandas as pd
 
 
 class _QLabeledComboBox(QtW.QWidget):

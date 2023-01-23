@@ -1,5 +1,5 @@
 from __future__ import annotations
-from typing import Callable, TYPE_CHECKING
+from typing import Callable
 from functools import partial
 from abc import ABC, abstractmethod
 import re
@@ -8,8 +8,7 @@ from qtpy.QtCore import Signal, Qt
 
 from . import _utils
 
-if TYPE_CHECKING:
-    from .._table import QBaseTable
+from .._table import QBaseTable
 
 
 class MatchMode:

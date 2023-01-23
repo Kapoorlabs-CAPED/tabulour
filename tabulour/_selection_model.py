@@ -1,5 +1,5 @@
 from __future__ import annotations
-from typing import TYPE_CHECKING, Callable, Iterable, Iterator, NamedTuple
+from typing import  Callable, Iterable, Iterator, NamedTuple
 from contextlib import contextmanager
 from psygnal import Signal
 

@@ -1,5 +1,5 @@
 from __future__ import annotations
-from typing import Callable, Any, TYPE_CHECKING
+from typing import Callable, Any
 from ._base import ViewerComponent
 
 from ...widgets import TableViewerBase

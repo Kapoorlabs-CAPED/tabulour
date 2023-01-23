@@ -1,12 +1,10 @@
 from __future__ import annotations
-from typing import TYPE_CHECKING
 from enum import Enum
 from qtpy import QtWidgets as QtW, QtCore, QtGui
 from qtpy.QtCore import Qt
 from .._titlebar import QTitleBar
 
-if TYPE_CHECKING:
-    from ._tabwidget import QTabbedTableStack
+from ._tabwidget import QTabbedTableStack
 
 
 class Anchor(Enum):

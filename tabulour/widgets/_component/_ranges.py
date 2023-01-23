@@ -3,7 +3,6 @@ from abc import abstractmethod
 from contextlib import contextmanager
 from typing import (
     Hashable,
-    TYPE_CHECKING,
     MutableSequence,
     Sequence,
     TypeVar,

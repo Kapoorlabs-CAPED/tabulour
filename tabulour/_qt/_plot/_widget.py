@@ -1,6 +1,5 @@
 from __future__ import annotations
 from functools import wraps
-from typing import TYPE_CHECKING
 from qtpy import QtWidgets as QtW, QtGui
 
 try:
@@ -12,14 +11,13 @@ except ImportError as e:
 import matplotlib.pyplot as plt
 from ._mpl_canvas import InteractiveFigureCanvas
 
-if TYPE_CHECKING:
-    import matplotlib.pyplot as plt
-    from matplotlib.figure import Figure
-    from matplotlib.axes import Axes
-    from matplotlib.artist import Artist
+import matplotlib.pyplot as plt
+from matplotlib.figure import Figure
+from matplotlib.axes import Axes
+from matplotlib.artist import Artist
 
-    import seaborn as sns
-    from seaborn.axisgrid import Grid
+import seaborn as sns
+from seaborn.axisgrid import Grid
 
 
 class QtMplPlotCanvas(QtW.QWidget):

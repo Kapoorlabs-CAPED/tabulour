@@ -1,5 +1,4 @@
 from __future__ import annotations
-from typing import TYPE_CHECKING
 from . import _dialogs
 
 from ..widgets import TableViewerBase

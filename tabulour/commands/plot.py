@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from typing import Hashable, TYPE_CHECKING, NamedTuple
+from typing import Hashable,  NamedTuple
 from . import _dialogs
 from ..widgets import TableBase, TableViewerBase
 

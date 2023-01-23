@@ -1,15 +1,14 @@
 from __future__ import annotations
 
-from typing import TYPE_CHECKING, Any, Callable
+from typing import  Any, Callable
 import logging
 from qt_command_palette import get_palette
 from tabulour import commands as cmds
 from tabulour._utils import get_config
 from ._mainwidgets import QMainWindow, QMainWidget
 
-if TYPE_CHECKING:
-    from ._base import _QtMainWidgetBase
-    from tabulour.widgets import TableViewerBase
+from ._base import _QtMainWidgetBase
+from ...widgets import TableViewerBase
 
 logger = logging.getLogger("tabulour")
 

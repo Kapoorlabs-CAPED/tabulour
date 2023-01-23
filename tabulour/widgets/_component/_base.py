@@ -3,7 +3,6 @@ import weakref
 from typing import (
     Generic,
     Literal,
-    TYPE_CHECKING,
     TypeVar,
     overload,
     Any,
